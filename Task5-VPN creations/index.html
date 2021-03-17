@@ -600,7 +600,7 @@
 <p>This configuration of vEdge can be done via Feature Templates or by using CLI Template on the vManage.  We will use CLI Template of the vEdge for this lab.  To provide differentiation, two separate CLI Templates will be created for vEdges in DC and Branches.</p>
 <h4 id="sdwan-lab-topology">SDWAN Lab Topology</h4>
 <p>The logical topology of VPN number 10 is shown in below figure:</p>
-<p><img alt="VPN traffic" src="pics/t5-vpn10_topology.png" /></p>
+<p><img alt="VPN traffic" src="../pics/t5-vpn10_topology.png" /></p>
 <p><strong>Pre-requisite:</strong>  SDWAN controllers and 3 vEdges (in Branches &amp; DC) must be fully operational.  If those are not installed (or not operational) then please complete the previous Tasks first.</p>
 <h2 id="step-1-create-vpn-10-on-branch-1-br1">Step 1: Create VPN 10 on Branch 1 (BR1)</h2>
 <p>A new VPN (number 10) will be used to pass traffic between Applications between Branches, the Data Centers and subsequently to the application hosted on AWS Cloud. </p>
@@ -615,7 +615,7 @@
 </li>
 <li>
 <p>Then <strong>Select</strong> the CLI template named <strong>"CL-branch-1-vedge"</strong>.  Next, Click on the three dots on right-side of <strong>"CL-branch-1-vedge" &gt; Edit</strong> as shown in below screenshot. </p>
-<p><img alt="CLI Template" src="pics/t5-br1-clitemplate-edit2.png" /></p>
+<p><img alt="CLI Template" src="../pics/t5-br1-clitemplate-edit2.png" /></p>
 </li>
 <li>
 <p>Edit option will allow you to add additional configurations in this template.  </p>
@@ -660,7 +660,7 @@
 </li>
 <li>
 <p>On the next screen, enter the <strong>ge0/3 IP address</strong> of <strong>vpn10-IP-address</strong> <code>10.3.0.3</code> for Branch-1 in the respective field and <strong>Click</strong> the <code>Next</code> button.  Below screenshot shows this:</p>
-<p><img alt="CLI Template" src="pics/t5-br1-clitemplate-vpn10ge03.png" /></p>
+<p><img alt="CLI Template" src="../pics/t5-br1-clitemplate-vpn10ge03.png" /></p>
 </li>
 <li>
 <p>On the next screen,</p>
@@ -685,7 +685,7 @@
 <p>Once you have verifed the config changes <strong>Click</strong> on <code>Configure Devices</code> button on the lower section of screen, as shown in below screenshot:</p>
 </li>
 </ul>
-<p><img alt="CLI Template" src="pics/t5-br1-clitemplate-loopback-configdev.png" /></p>
+<p><img alt="CLI Template" src="../pics/t5-br1-clitemplate-loopback-configdev.png" /></p>
 </li>
 </ul>
 <p>This completes the configuration of VPN 10 on BR1-vEdge</p>
@@ -739,7 +739,7 @@ ping vpn 10 10.3.0.10
 </tbody>
 </table>
 <p>Below screenshot shows the output of above command:</p>
-<p><img alt="VPN 10" src="pics/t5-br1-showrun-vpn10ge03-ping.png" /></p>
+<p><img alt="VPN 10" src="../pics/t5-br1-showrun-vpn10ge03-ping.png" /></p>
 </li>
 </ul>
 <p>This successfully adds VPN 10 to Branch 1</p>
@@ -787,7 +787,7 @@ ping vpn 10 10.4.254.254
 </li>
 </ul>
 <p>This will successfully add VPN 10 to vEdge in Branch 2.  Below screenshot shows a successful test for BR2-vEdge:</p>
-<p><img alt="VPN 10" src="pics/t5-br2-showvpn10ge02-ping.png" /></p>
+<p><img alt="VPN 10" src="../pics/t5-br2-showvpn10ge02-ping.png" /></p>
 </li>
 </ul>
 <h2 id="step-4-verify-vpn-10-routing-on-br1-br2">Step 4: Verify VPN 10 routing on BR1 &amp; BR2</h2>
@@ -805,7 +805,7 @@ show omp routes vpn 10
 </code></pre>
 <p>You should verify that each vEdge has learned the LAN segment IP address of remote vEdge (within VPN 10) </p>
 <p>Below screenshot shows an example of partial execution of above commands from BR2-vEdge:</p>
-<p><img alt="VPN 10" src="pics/t5-br2-showiproutes.png" /></p>
+<p><img alt="VPN 10" src="../pics/t5-br2-showiproutes.png" /></p>
 <p>This confirms that VPN 10 is routed properly between BR1 and BR2</p>
 </li>
 </ul>
@@ -898,7 +898,7 @@ ping vpn 10 198.18.128.1
 <li>vEdge has connectivity to local device (on the LAN of vEdge) in VPN 10 by initiating a ping to a host on LAN </li>
 </ul>
 <p>Below screenshot shows the output of above command:</p>
-<p><img alt="VPN 10" src="pics/t5-dc-showrun-vpn10-ping.png" /></p>
+<p><img alt="VPN 10" src="../pics/t5-dc-showrun-vpn10-ping.png" /></p>
 <p>This successfully adds VPN 10 to DC</p>
 <h2 id="step-7-add-vpn-20-and-30-on-all-vedges-dc1-branch1-branch2">Step 7: Add VPN 20 and 30 on all vEdges (DC1, Branch1 &amp; Branch2)</h2>
 <ul>

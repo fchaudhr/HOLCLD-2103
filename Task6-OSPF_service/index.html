@@ -539,7 +539,7 @@
 <p>Cisco CSRv exists on the LAN side of BR2 and this CSRv has already been configured with appropriate configurations for OSPF peering.</p>
 <h4 id="sdwan-lab-topology">SDWAN Lab Topology</h4>
 <p>The logical topology of this branch is shown in below figure:</p>
-<p><img alt="OSPF Peering" src="pics/t6-ospf-topology.png" /></p>
+<p><img alt="OSPF Peering" src="../pics/t6-ospf-topology.png" /></p>
 <p><strong>Pre-requisite:</strong></p>
 <p>SDWAN controllers and vEdges (in Branches &amp; DC) must be fully operational.  If those are not installed (or not operational) then please complete the previous Tasks first.</p>
 <h2 id="step-1-adding-ospf-config-in-br2">Step 1: Adding OSPF config in BR2</h2>
@@ -683,7 +683,7 @@ show ospf routes
 show ip routes vpn 10
 </code></pre>
 <p>Below screenshot shows the output of of above commands on BR2-vEdge:</p>
-<p><img alt="OSPF on BR2" src="pics/t6-br2-showrunvpn10-ospf-routes.png" /></p>
+<p><img alt="OSPF on BR2" src="../pics/t6-br2-showrunvpn10-ospf-routes.png" /></p>
 <p>From the output of above commands, <strong>confirm</strong> that vEdge-1 in Branch #1 shows that:</p>
 <ul>
 <li><strong>OSPF</strong> configurations <strong>under VPN 10</strong> exist on the vEdge,</li>
@@ -710,7 +710,7 @@ show ip routes vpn 10
 show omp routes
 </code></pre>
 <p>Below screenshot shows the output of of above commands on BR1-vEdge:</p>
-<p><img alt="OSPF on BR1" src="pics/t6-br1-show-route-omp.png" /></p>
+<p><img alt="OSPF on BR1" src="../pics/t6-br1-show-route-omp.png" /></p>
 <p>From the output of above commands, verify that OSPF routes of <strong>10.4.0.0</strong> has been <strong>redistributed via OMP</strong> by BR2-vEdge</p>
 <ul>
 <li>On <strong>BR1-vEdge</strong>, we can get more details (attributes learned via OMP) about the routes by using below command:</li>
@@ -718,7 +718,7 @@ show omp routes
 <pre><code>show omp routes vpn 10 10.4.0.0/24 detail
 </code></pre>
 <p>Below screenshot shows the output of of above commands on BR1-vEdge:</p>
-<p><img alt="OSPF on BR1" src="pics/t6-br1-show-omp-det.png" /></p>
+<p><img alt="OSPF on BR1" src="../pics/t6-br1-show-omp-det.png" /></p>
 <p>From the output of above command you can verify the attributes for <code>10.4.0.0/24</code> route such as:</p>
 <ul>
 <li><code>origin-proto</code> is <code>OSPF-intra-area</code> (so route is originated by OSPF)</li>

@@ -556,7 +556,7 @@
 <ul>
 <li>
 <p>Launch <strong>Mputty</strong> application from the Remote desktop by clicking on it's icon on the desktop:</p>
-<p><img alt="Mputty" src="pics/t3-mputty.png" /></p>
+<p><img alt="Mputty" src="../pics/t3-mputty.png" /></p>
 </li>
 <li>
 <p>Using <strong>MTPutty</strong> on your Remote Desktop session, initiate a <strong>SSH</strong> session to the BR1-vEdge with <strong>IP address</strong> of <strong>198.18.134.105</strong> this vEdge (<strong>BR1-vEdge</strong>).  You can use credentials of <code>admin</code> and <code>admin</code> for  authentication.</p>
@@ -586,7 +586,7 @@
 <pre><code>show run vpn 512
 </code></pre>
 <p>Below screenshot shows VPN 512 configs:</p>
-<p><img alt="VPN 512" src="pics/t3-br1-showvpn512.png" /></p>
+<p><img alt="VPN 512" src="../pics/t3-br1-showvpn512.png" /></p>
 <ul>
 <li><strong>Execute</strong> the below <strong>command</strong> to verify that system related configurations on this vEdge: </li>
 </ul>
@@ -598,7 +598,7 @@
 *  site-id
 *  organization name
 *  vBond DNS name of <code>vbond.cisco.com</code> </p>
-<p><img alt="Mputty" src="pics/t3-br1-showsystem.png" /></p>
+<p><img alt="Mputty" src="../pics/t3-br1-showsystem.png" /></p>
 <table>
 <thead>
 <tr>
@@ -622,7 +622,7 @@
 <li>default routes are configured for both links,</li>
 <li>Each WAN link is also configured with appropriate <code>color</code> tag:</li>
 </ul>
-<p><img alt="VPN 0" src="pics/t3-br1-showvpn0.png" /></p>
+<p><img alt="VPN 0" src="../pics/t3-br1-showvpn0.png" /></p>
 <table>
 <thead>
 <tr>
@@ -647,7 +647,7 @@
 show certificate installed  
 </code></pre>
 <p>Below screenshot shows the partial output of the above command.  Note that Issuer of the certificate is vManage</p>
-<p><img alt="VPN 0" src="pics/t3-br1-showcert.png" /></p>
+<p><img alt="VPN 0" src="../pics/t3-br1-showcert.png" /></p>
 <ul>
 <li><strong>Run</strong> the below <strong>command</strong> to see the list of control connections of this vEdge to the Control Plane (vManage, vSmart)</li>
 </ul>
@@ -658,7 +658,7 @@ show certificate installed
 <li>Two (2) control connections established to vSmart Controller</li>
 <li>One (1) control connection established to vManage</li>
 </ul>
-<p><img alt="Control on vEdge" src="pics/t3-br1-controlconnection.png" /></p>
+<p><img alt="Control on vEdge" src="../pics/t3-br1-controlconnection.png" /></p>
 <p>In addition to option of configuring a vEdge using local CLI, centralized configuration/management of vEdges can be done from the vManage using "CLI Template" or "Feature Template".  In this lab, "CLI Template" has already been configured for BR1-vEdge (i.e. vEdge in Branch-1).  Hence this vEdge is managed/provisioned centrally via vManage.</p>
 <ul>
 <li>On the <strong>Mputty</strong> client with <strong>SSH</strong> session to <code>BR1-vEdge</code> verify that template is successfully attached by running below <strong>command</strong>:</li>
@@ -671,7 +671,7 @@ show certificate installed
 <li><code>Configuration template: CL-branch-1-vedge</code></li>
 </ul>
 <p>Below screenshot shows the partial output of above command:
-<img alt="CLI Template" src="pics/t3-br1-show-system-status.png" /></p>
+<img alt="CLI Template" src="../pics/t3-br1-show-system-status.png" /></p>
 <table>
 <thead>
 <tr>
@@ -709,19 +709,19 @@ show certificate installed
 <ul>
 <li>
 <p>On the <strong>vManage GUI</strong>, navigate to <strong>Configuration &gt;  Devices &gt; WAN Edge List</strong>.  Here you will see a WAN Edge device with <code>Chassis Number</code> of <code>ddd801b2-8cbe-4394-abd1-3b71e39886e3</code>.  This vEdge will be configured as a WAN Edge for Branch #2. </p>
-<p><img alt="WAN Edge List" src="pics/t3-vmanage-vedge-br2.png" /></p>
+<p><img alt="WAN Edge List" src="../pics/t3-vmanage-vedge-br2.png" /></p>
 </li>
 <li>
 <p>Then <strong>Click</strong> the three dots <strong><code>...</code></strong> on the right side of this vEdge (with Chassis Number of ddd801b2-8cbe-4394-abd1-3b71e39886e3) and  <strong>Click</strong>  <code>Generate Bootstrap Configuration</code> as shown in the below screenshot:</p>
-<p><img alt="Generate Bootstrap" src="pics/t3-br2-cert-otp.png" /></p>
+<p><img alt="Generate Bootstrap" src="../pics/t3-br2-cert-otp.png" /></p>
 </li>
 <li>
 <p>Select <strong>Cloud-Init</strong> on <strong>Generate Bootstrap Configuration</strong> pop-up window:</p>
-<p><img alt="Generate Bootstrap" src="pics/t3-br2-CloudInit.png" /></p>
+<p><img alt="Generate Bootstrap" src="../pics/t3-br2-CloudInit.png" /></p>
 </li>
 <li>
 <p>This will result in generation of a new One-Time-Password (OTP) as shown in below screenshot.  <strong>Copy</strong>  the <code>otp</code> and <code>uuid</code> fields from this pop-up window.  </p>
-<p><img alt="OTP" src="pics/t3-br2-cert-otp-data.png" /></p>
+<p><img alt="OTP" src="../pics/t3-br2-cert-otp-data.png" /></p>
 <table>
 <thead>
 <tr>
@@ -816,14 +816,14 @@ vpn 0
 <pre><code>request vedge-cloud activate chassis-number ddd801b2-8cbe-4394-abd1-3b71e39886e3 token {otp}
 </code></pre>
 <p>Below screenshot gives an example of executing this command:</p>
-<p><img alt="OTP" src="pics/t3-br2-requestcertcli.png" /></p>
+<p><img alt="OTP" src="../pics/t3-br2-requestcertcli.png" /></p>
 <ul>
 <li>On the <strong>SSH</strong> connection to vEdge, <strong>execute</strong> the below command to verify that a valid serial number is generated </li>
 </ul>
 <pre><code>show certificate serial
 </code></pre>
 <p>Below screenshot shows the output of above command confirming that a valid serial is now installed on vEdge:</p>
-<p><img alt="show cert" src="pics/t3-br2-show-cert.png" /></p>
+<p><img alt="show cert" src="../pics/t3-br2-show-cert.png" /></p>
 <table>
 <thead>
 <tr>
@@ -842,7 +842,7 @@ vpn 0
 <pre><code>show control connections
 </code></pre>
 <p>Below screenshot shows the output of above command:</p>
-<p><img alt="show control" src="pics/t3-br2-show-control-connections.png" /></p>
+<p><img alt="show control" src="../pics/t3-br2-show-control-connections.png" /></p>
 <p>From the above output you can:</p>
 <ul>
 <li>confirm that <strong>State</strong> of control plane connection to vManage is <strong>up</strong></li>
@@ -880,7 +880,7 @@ vpn 0
 <ul>
 <li>
 <p>On the vManage GUI, navigate to <strong>Configuration &gt; Templates</strong>.  Under <strong>Devices</strong> tab click <strong>Create Template</strong> and then select <strong>CLI Template</strong> as shown in the below screenshot:</p>
-<p><img alt="CLI Template" src="pics/t3_clitemplate.png" /></p>
+<p><img alt="CLI Template" src="../pics/t3_clitemplate.png" /></p>
 </li>
 <li>
 <p>Next, from the <strong>Device Model</strong> dropdown menu select <code>vEdge-Cloud</code></p>
@@ -1014,7 +1014,7 @@ vpn 512
 <ul>
 <li>
 <p>Next <strong>Click</strong> the <code>Add</code> button at the bottom of page as shown in the below screenshot:</p>
-<p><img alt="BR2 Template" src="pics/t3-br2-clitemplate.png" /></p>
+<p><img alt="BR2 Template" src="../pics/t3-br2-clitemplate.png" /></p>
 </li>
 <li>
 <p>On the next screen, <strong>verify</strong> that this Template has been added successfully</p>
@@ -1030,7 +1030,7 @@ vpn 512
 </li>
 <li>
 <p>Then <strong>Click</strong> the three dots <strong><code>...</code></strong> on the right side of this Template and  <strong>Select</strong>  <code>Attach Devices</code> option from the drop down menu as shown in the below screenshot:</p>
-<p><img alt="CLI Template" src="pics/t3-br2-clitemplate-attach0.png" /></p>
+<p><img alt="CLI Template" src="../pics/t3-br2-clitemplate-attach0.png" /></p>
 </li>
 </ul>
 </li>
@@ -1041,12 +1041,12 @@ vpn 512
 <li><strong>Click</strong> on the <code>Right Arrow icon</code> as shown in below screenshot.   At this point the vEdge should move to the <strong>Selected Devices</strong> tab</li>
 <li><strong>Click</strong> on the <code>Attach</code> button as shown in below screenshot</li>
 </ul>
-<p><img alt="CLI Template" src="pics/t3-br2-clitemplate-attach1.png" /></p>
+<p><img alt="CLI Template" src="../pics/t3-br2-clitemplate-attach1.png" /></p>
 </li>
 <li>
 <p>On the next screen, <strong>Click</strong> on <code>BR2-vEdge</code> (with <em>uuid</em> of <code>ddd801b2-8cbe-4394-abd1-3b71e39886e3</code>) on left section and <strong>Click</strong> on <code>Config Preview</code> and <code>Config Diff</code> options on the right side of window to confirm correct configurations are pushed to this BR2-vEdge.  </p>
 <p>Below screenshot shows "Config Preview" confirming that correct VPN 512 configs are being pushed to BR2-vEdge:</p>
-<p><img alt="CLI Template" src="pics/t3-br2-clitemplate-attach2.png" /></p>
+<p><img alt="CLI Template" src="../pics/t3-br2-clitemplate-attach2.png" /></p>
 </li>
 <li>
 <p>Next <strong>Click</strong> on the <code>Configure Devices</code> button on bottom of the screen.  On the subsequent screen verify that the template is attached successfully to BR2-vEdge</p>
@@ -1063,7 +1063,7 @@ vpn 512
 <li><code>Configuration template:  CL-BR2-vEdge1</code></li>
 </ul>
 <p>Below screenshot shows the output of above command confirming that template is attached successfully:
-<img alt="CLI Template" src="pics/t3-br2-show-system-status.png" /></p>
+<img alt="CLI Template" src="../pics/t3-br2-show-system-status.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1102,7 +1102,7 @@ show run
 <ul>
 <li>
 <p>On the vManage GUI, navigate to <strong>Configuration &gt; Templates</strong>.  Under <strong>Devices</strong> tab click <strong>Create Template</strong> and then select <strong>CLI Template</strong> as shown in the below screenshot:</p>
-<p><img alt="CLI Template" src="pics/t3_clitemplate.png" /></p>
+<p><img alt="CLI Template" src="../pics/t3_clitemplate.png" /></p>
 </li>
 <li>
 <p>Next, from the <strong>Device Model</strong> dropdown menu select <code>vEdge-Cloud</code></p>
@@ -1250,7 +1250,7 @@ vpn 512
 <ul>
 <li>
 <p>Next <strong>Click</strong> the <code>Add</code> button as shown in the below screenshot:</p>
-<p><img alt="BR2 Template" src="pics/t3-dc-clitemplate.png" /></p>
+<p><img alt="BR2 Template" src="../pics/t3-dc-clitemplate.png" /></p>
 </li>
 <li>
 <p>On the screen, <strong>verify</strong> that this Template has been added successfully</p>
@@ -1266,7 +1266,7 @@ vpn 512
 </li>
 <li>
 <p>Then <strong>Click</strong> the three dots <strong><code>...</code></strong> on the right side of this Template and  <strong>Select</strong>  <code>Attach Devices</code> option from the drop down menu as shown in the below screenshot:</p>
-<p><img alt="CLI Template" src="pics/t3-dc-clitemplate-attach0.png" /></p>
+<p><img alt="CLI Template" src="../pics/t3-dc-clitemplate-attach0.png" /></p>
 </li>
 </ul>
 </li>
@@ -1277,7 +1277,7 @@ vpn 512
 <li><strong>Click</strong> on the <code>Right Arrow icon</code> as shown in below screenshot.   At this point the vEdge should move to the <strong>Selected Devices</strong> tab</li>
 <li><strong>Click</strong> on the <code>Attach</code> button as shown in below screenshot</li>
 </ul>
-<p><img alt="CLI Template" src="pics/t3-dc-clitemplate-attach1.png" /></p>
+<p><img alt="CLI Template" src="../pics/t3-dc-clitemplate-attach1.png" /></p>
 </li>
 <li>
 <p>On the next screen, </p>
@@ -1302,12 +1302,12 @@ vpn 512
 </li>
 </ul>
 <p>Below screenshot shows this for one of the reference pod:</p>
-<p><img alt="CLI Template" src="pics/t3-dc-clitemplate-attach2.png" /></p>
+<p><img alt="CLI Template" src="../pics/t3-dc-clitemplate-attach2.png" /></p>
 <ul>
 <li>
 <p>On the next screen, <strong>Click</strong> on <code>DC1-VEDGE1</code> (with <em>uuid</em> of <code>ebdc8bd9-17e5-4eb3-a5e0-f438403a83de</code>) on left section and <strong>Click</strong> on <code>Config Preview</code> and <code>Config Diff</code> options on the right side of window to confirm correct configurations are pushed to this DC1-VEDGE1.  </p>
 <p>Below screenshot shows "Config Preview" confirming that correct VPN 512 configs are being pushed to DC1-VEDGE1:</p>
-<p><img alt="CLI Template" src="pics/t3-dc-clitemplate-attach3.png" /></p>
+<p><img alt="CLI Template" src="../pics/t3-dc-clitemplate-attach3.png" /></p>
 </li>
 </ul>
 <table>
@@ -1406,7 +1406,7 @@ show control connections
 <pre><code>show control connections
 </code></pre>
 <p>Below screenshot shows the working state of this vEdge:</p>
-<p><img alt="DC control" src="pics/t3-dc-show-control-connect.png" /></p>
+<p><img alt="DC control" src="../pics/t3-dc-show-control-connect.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1433,7 +1433,7 @@ show control connections
 <li><code>Configuration template:  CL-DC-vEdge</code></li>
 </ul>
 <p>Below screenshot shows the output of above command:</p>
-<p><img alt="CLI Template" src="pics/t3-dc-show-system-status.png" /></p>
+<p><img alt="CLI Template" src="../pics/t3-dc-show-system-status.png" /></p>
 <table>
 <thead>
 <tr>

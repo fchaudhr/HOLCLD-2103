@@ -553,7 +553,7 @@
 <p>Log on to AWS marketplace from a web browser (if not already open) and click on <strong>Sign In</strong> </p>
 <pre><code>https://aws.amazon.com/marketplace
 </code></pre>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_AMI.png" /> </p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_AMI.png" /> </p>
 <p>Use credentials of the following:</p>
 <ul>
 <li>Account ID = <code>807272386705</code></li>
@@ -572,19 +572,19 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_login.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_login.png" /></p>
 <ul>
 <li>Search <code>Cisco SDWAN</code> and click <strong>Cisco vEdge Cloud Router</strong> from the list of results.</li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_AMI2.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_AMI2.png" /></p>
 <ul>
 <li>Click <strong>Continue to Subscribe</strong></li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_AMI3.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_AMI3.png" /></p>
 <ul>
 <li>Verify you are already subscribed to this software.</li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_AMI4.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_AMI4.png" /></p>
 <p><a name="Step2"></a></p>
 <h2 id="step-2-create-host-vpc-in-aws">Step 2: Create host VPC in AWS</h2>
 <p>In this step we will create host VPC (Virtual Private Cloud) in respective AWS region which will be identified in next steps.</p>
@@ -609,7 +609,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="AWS Login" src="pics/t7-AWS_login.png" /></p>
+<p><img alt="AWS Login" src="../pics/t7-AWS_login.png" /></p>
 <p>Once connected to AWS Management Console, verify the correct region is selected on the navigation bar. Please see below for details:</p>
 <table>
 <thead>
@@ -686,19 +686,19 @@
 <ul>
 <li>Select region list from up-right corner of the console as shown below and select your respective region; as an example <strong>US East (N. Virginia)</strong> should be selected by <strong>CLEUR_User1</strong>.</li>
 </ul>
-<p><img alt="AWS Region" src="pics/t7-AWS_region_verfication.png" /></p>
+<p><img alt="AWS Region" src="../pics/t7-AWS_region_verfication.png" /></p>
 <ul>
 <li>Then click on <code>Services</code> on the navigation pane and select <strong>VPC</strong> from <strong>Networking &amp; Content Delivery</strong> menu.</li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_select_VPC.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_select_VPC.png" /></p>
 <ul>
 <li>Click on <strong>Your VPCs</strong> on the VPC navigation pane.</li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_yourVPCs.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_yourVPCs.png" /></p>
 <ul>
 <li>and then click on <code>Create VPC</code></li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_createVPC.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_createVPC.png" /></p>
 <ul>
 <li>Using <code>#=1,2,3,...,16</code> create host VPC with following settings:</li>
 <li>Name the host VPC as <code>SDWAN-hostVPC#</code> </li>
@@ -719,11 +719,11 @@
 <li>Specify IPv4 CIDR block as <code>10.#.0.0/16</code></li>
 <li>Leave rest of the options as default and click on <code>Create</code> and then <code>Close</code></li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_createVPC2.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_createVPC2.png" /></p>
 <ul>
 <li>Verify host VPC <strong>SDWAN_hostVPC#</strong> is created.</li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_createVPC3.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_createVPC3.png" /></p>
 <p><a name="Step3"></a></p>
 <h2 id="step-3-aws-api-and-secret-keys">Step 3: AWS API and Secret Keys</h2>
 <p>Different types of security credentials are used depending on how you interact with AWS. For example, you use a user name and password to sign in to the AWS Management Console.  Additionally, you use access keys to make programmatic calls to AWS API operations or to use AWS CLI commands. We will use  access keys in next step.  </p>
@@ -773,14 +773,14 @@
 <p>We will use a configuration wizard in vManage that automates to bring-up vEdge Cloud routers using your AWS public cloud user account and automates the connections between public cloud and branches &amp; DC in the SDWAN overlay network. Click on <strong>Add New Cloud Instance</strong> as shown below.</p>
 </li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp.png" /></p>
 <ul>
 <li>In the <strong>Add Cloud Instance-Log In to a Cloud Server</strong> popup:<ul>
 <li>Select <strong>amazon web services</strong> and Click on <strong>Login</strong></li>
 </ul>
 </li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudLogin.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudLogin.png" /></p>
 <ul>
 <li>Select <strong>Key</strong> and open <code>accessKeys.csv</code> file.<ul>
 <li>Copy <strong>Access key ID</strong> from <code>accessKeys.csv</code> file and paste as <strong>API Key</strong>.</li>
@@ -802,7 +802,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudLogin2.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudLogin2.png" /></p>
 <p><a name="selectregionCloudonRamp"></a></p>
 <ul>
 <li>Next, select your AWS region from <strong>Choose Region</strong> drop down menu in <strong>Select a Region and Create Transit VPCs</strong> step. A graphic on the right side of the screen illustrates the steps in the cloud instance configuration process. Steps not yet completed are shown in light gray. Completed steps are indicated with a green checkmark and are shown in light orange.</li>
@@ -819,7 +819,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_Region.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_Region.png" /></p>
 <ul>
 <li>
 <p>Next, enter Transit VPC and Device Information parameters as below:</p>
@@ -845,11 +845,11 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_Parameters.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_Parameters.png" /></p>
 <ul>
 <li><strong>Discover Host VPCs</strong> step will allow you to select <code>807272386705</code> from <strong>Select an account to discover</strong> list and then click <code>Discover Host VPCs</code>.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_Discover.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_Discover.png" /></p>
 <ul>
 <li>On the next screen, please verify desired Host VPC in <strong>Discovered Host VPCs</strong> step which has been created in <a href="#Step2">Step 2</a>. Please see below screenshot for <code>CLEUR_User1</code> and discovered Host VPC is <code>SDWAN-hostVPC1</code>. Checkmark it and then click <code>Next</code>.</li>
 </ul>
@@ -868,11 +868,11 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_HostVPC.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_HostVPC.png" /></p>
 <ul>
 <li>Next, Click <code>Map VPCs</code>in <strong>Map Host VPCs to Transit VPCs</strong> step.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_MapVPC.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_MapVPC.png" /></p>
 <ul>
 <li>The <strong>Map Host VPCs</strong> pop-up window opens, make sure following parameters are configured and then click <code>Map VPCs</code>.<ul>
 <li>Using <code>#=1,2,3,...,16</code> verify <strong>Transit VPC</strong> as <code>SDWAN-transitVPC#</code>. As an example, it should be <code>SDWAN-transitVPC1</code> for <code>CLEUR_User1</code></li>
@@ -881,11 +881,11 @@
 </ul>
 </li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_MapVPC2.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_MapVPC2.png" /></p>
 <ul>
 <li>Now, you will see <code>SDWAN-hostVPC1</code> is not checkmarked anymore, this is because Host VPC and Transit VPC are successfully mapped. To verify, make sure <strong>Mapping Status</strong> is green and then click <code>Save and Complete</code>. </li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_MapVPC3.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_MapVPC3.png" /></p>
 <table>
 <thead>
 <tr>
@@ -901,39 +901,39 @@
 <ul>
 <li>Creating AWS resources such as Transit VPC, Internet Gateway, vEdge Cloud pair and setting up the infrastructure will take 10-15 minutes time. Progress can be tracked through <strong>Status</strong> and <strong>Message</strong> updates on vManage as shown below:</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS.png" /></p>
 <ul>
 <li>In order to verify the progress from AWS Management Console, Click <strong>Services</strong>.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRampVerify.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRampVerify.png" /></p>
 <ul>
 <li>Then select <strong>VPC</strong> from <strong>Networking &amp; Content Delivery</strong> menu.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRampVerify2.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRampVerify2.png" /></p>
 <ul>
 <li>You will see <strong>VPC Dasboard</strong> which provides a summary of provisioned resources by your region. Click <strong>VPCs</strong></li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRampVerify3.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRampVerify3.png" /></p>
 <ul>
 <li>As shown below Transit VPC is now created on AWS of <code>SDWAN-transitVPC1</code> during <strong>Cloud onRamp for IaaS</strong> task is still running.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS2.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS2.png" /></p>
 <ul>
 <li>on vManage GUI, review provisioning vEdge Cloud routers for Transit VPC.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS3.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS3.png" /></p>
 <ul>
 <li>In order to verify vEdge Cloud instances in AWS, go back to AWS Management Console and Click <code>Services</code></li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS4.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS4.png" /></p>
 <ul>
 <li>Select <strong>EC2</strong> from <strong>Compute</strong> menu</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS5.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS5.png" /></p>
 <ul>
 <li>Select <strong>Instances</strong></li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS6.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS6.png" /></p>
 <ul>
 <li>Verify vEdge Cloud instances are <strong>Initializing</strong> status meaning that vEDge Cloud instances status checks are still in progress.</li>
 </ul>
@@ -952,15 +952,15 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS7.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS7.png" /></p>
 <ul>
 <li>Once <strong>Status Checks</strong> are updated as <strong>2/2 checks passed</strong>, this means vEdge Cloud router provisioning is completed successfully.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS8.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS8.png" /></p>
 <ul>
 <li>On the vManage GUI, verify that <strong>Cloud onRamp for IaaS</strong> task has been completed successfully. </li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS9.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS9.png" /></p>
 <table>
 <thead>
 <tr>
@@ -998,15 +998,15 @@
 <ul>
 <li><strong>Configuration &gt; Cloud onRamp for Iaas</strong> GUI final view will be as shown below.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS10.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS10.png" /></p>
 <p><strong>Troubleshooting Cisco vEdge Cloud Router on AWS public cloud</strong></p>
 <p>In case you will experience <strong>Cloud onRamp for IaaS</strong> task failure due to AWS resources, you can follow below troubleshooting steps.</p>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_Troubleshooting.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_Troubleshooting.png" /></p>
 <p><strong>Troubleshooting Option 1</strong></p>
 <ul>
 <li><strong>Assumption:</strong> AWS EC2 instances are provisioned and in running state. Verify EC2 instances from AWS Managenment console.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS8.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS8.png" /></p>
 <ul>
 <li>
 <p><strong>Step 1:</strong> Go to <strong>Configuration &gt; Cloud onRamp for Iaas</strong> and click green arrow on <code>Mapped Host VPCs</code> section. This will open up a new browser.</p>
@@ -1018,11 +1018,11 @@
 <p><strong>Step 3:</strong> Click <code>Discover Host VPCs</code> and then select host VPC from the list. You can verify your host VPC name from AWS management console.</p>
 </li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_Troubleshooting2.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_Troubleshooting2.png" /></p>
 <ul>
 <li><strong>Step 4:</strong> Click <code>Map VPCs</code></li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_Troubleshooting3.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_Troubleshooting3.png" /></p>
 <ul>
 <li>
 <p><strong>Step 5:</strong> Select below parameters on <code>Map Host VPCs</code> pop-up page and then click <code>Map VPCs</code></p>
@@ -1033,11 +1033,11 @@
 </ul>
 </li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_Troubleshooting4.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_Troubleshooting4.png" /></p>
 <ul>
 <li><strong>Step 6:</strong> Verify host and transit VPCs are mapped, route propagation is enabled and required configuration is completed on AWS side.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_Troubleshooting5.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_Troubleshooting5.png" /></p>
 <p><strong>Troubleshooting Option 2</strong></p>
 <ul>
 <li>Complete <code>Task 11: Delete Cloud onRamp for IaaS</code> and then repeat <a href="#Step4">Step 4</a>.</li>
@@ -1056,28 +1056,28 @@
 </ul>
 </li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_MapVPC_nopropagate.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_MapVPC_nopropagate.png" /></p>
 <ul>
 <li>Continue same as in <a href="#Step4">Step 4</a> and verify <strong>Cloud onRamp for IaaS</strong> task has been completed successfully as below.</li>
 </ul>
-<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS9.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS9.png" /></p>
 <ul>
 <li>Login to AWS management console with your given user name and password and make sure that a new VPW (virtual private gateway) on respective region is created by selecting <code>VPC</code> and then <code>Virtual Private Gateway</code>. </li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_VPC.png" /></p>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_verifyVPW.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_VPC.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_verifyVPW.png" /></p>
 <ul>
 <li>Then follow below steps:</li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_route_propagate.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_route_propagate.png" /></p>
 <ul>
 <li>Checkmark <strong>Propagate</strong> check box and click <strong>Save</strong>.</li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_route_propagate2.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_route_propagate2.png" /></p>
 <ul>
 <li>Verify that route propagation is enabled on AWS host VPC.</li>
 </ul>
-<p><img alt="AWS hostVPC" src="pics/t7-AWS_route_propagate3.png" /></p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_route_propagate3.png" /></p>
 <hr />
 <p>This concludes the process to onboard two (2) vEdge Cloud routers in AWS and configure <strong>Cloud onRamp for Iaas for AWS</strong>.</p>
                 

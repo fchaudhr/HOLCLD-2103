@@ -518,7 +518,7 @@
 <ul>
 <li>
 <p>Launch <strong>Mputty</strong> application from the Remote desktop by clicking on it's icon on the desktop:</p>
-<p><img alt="Mputty" src="pics/t3-mputty.png" /></p>
+<p><img alt="Mputty" src="../pics/t3-mputty.png" /></p>
 </li>
 <li>
 <p>Using <strong>MPutty</strong> on your Remote Desktop session, initiate a <strong>SSH</strong> session to the BR1-vEdge with <strong>IP address</strong> of <strong>198.18.134.105</strong> this vEdge (<strong>BR1-vEdge</strong>).  You can use credentials of <code>admin</code> and <code>admin</code> for  authentication.</p>
@@ -546,23 +546,23 @@
 <pre><code>show run vpn 20
 </code></pre>
 <p>Below screenshot shows VPN 20 configs:</p>
-<p><img alt="" src="pics/t8a-show run vpn 20-BR1.png" /></p>
+<p><img alt="" src="../pics/t8a-show%20run%20vpn%2020-BR1.png" /></p>
 <p>Below screenshot BR2-vEdge for VPN20:</p>
-<p><img alt="" src="pics/t8a-show run vpn 20-BR2.png" /></p>
+<p><img alt="" src="../pics/t8a-show%20run%20vpn%2020-BR2.png" /></p>
 <ul>
 <li><strong>Execute</strong> below <strong>command</strong> to verify the routing table for VPN 20 on both vEdge: </li>
 </ul>
 <pre><code>show ip route vpn 20
 </code></pre>
-<p><img alt="VPN 512" src="pics/t8a-show ip route vpn 20-br1.png" /></p>
+<p><img alt="VPN 512" src="../pics/t8a-show%20ip%20route%20vpn%2020-br1.png" /></p>
 <p>As shown in the output in the below screenshot, prefix 10.20.2.1/32 (BR2 VPN 20 Loopback20) is directly received from  TLOC IP 10.4.0.1 (BR2-TlOC) from both links (MPLS and Private1).</p>
 <p>Also prefix 10.20.100.1/32 (DC-vEdge loopback20) is directly received from TLOC IP 10.1.0.1 (DC-vEdge) from both links (MPLS and Private1).</p>
 <ul>
 <li>Lets look at the screenshots from BR2 which shows that all prefixes are directly received from respective vEdges.</li>
 </ul>
-<p><img alt="" src="pics/t8a-show ip route vpn20-BR2.png" /></p>
+<p><img alt="" src="../pics/t8a-show%20ip%20route%20vpn20-BR2.png" /></p>
 <p>Below is the output for DC-vEDGE</p>
-<p><img alt="" src="pics/t8a-show ip route vpn20-DC.png" /></p>
+<p><img alt="" src="../pics/t8a-show%20ip%20route%20vpn20-DC.png" /></p>
 <table>
 <thead>
 <tr>
@@ -583,31 +583,31 @@
 </ul>
 </li>
 </ul>
-<p><img alt="VPN 512" src="pics/t8a-Open Vitpela.png" /></p>
+<p><img alt="VPN 512" src="../pics/t8a-Open%20Vitpela.png" /></p>
 <p>At the login page enter user/pass: admin/admin and login.</p>
-<p><img alt="" src="pics/t8a-vManage login.png" /></p>
+<p><img alt="" src="../pics/t8a-vManage%20login.png" /></p>
 <p>Verify the traffic path using <strong>vManage</strong>. Open <strong>vManage</strong> select <strong>Monitoring&gt;Network</strong></p>
-<p><img alt="" src="pics/t8a-Trace-verify1.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify1.png" /></p>
 <ul>
 <li>Select <strong>BR1-vEdge</strong></li>
 </ul>
-<p><img alt="" src="pics/t8a-Trace-verify2.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify2.png" /></p>
 <ul>
 <li>Select <strong>Troubleshooting</strong> </li>
 </ul>
-<p><img alt="" src="pics/t8a-Trace-verify3.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify3.png" /></p>
 <ul>
 <li>Select <strong>Trace Route</strong> </li>
 </ul>
-<p><img alt="" src="pics/t8a-Trace-verify4.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify4.png" /></p>
 <ul>
 <li>Enter <strong>Destination IP</strong><em>, select </em><em>VPN-20</em><em> and click </em><em>Start</em>*</li>
 </ul>
-<p><img alt="" src="pics/t8a-Trace-verify5.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify5.png" /></p>
 <p>You can verify that the traffic is going directly to BR2-vEdge</p>
-<p><img alt="" src="pics/t8a-Trace-verify8.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify8.png" /></p>
 <p>Follow the same steps and verify <strong>BR2-vEdge</strong> traffic path for <strong>VPN-20</strong> towards <strong>BR1-vEdge</strong>. You will observe the below output.</p>
-<p><img alt="" src="pics/t8a-Trace-verify9.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify9.png" /></p>
 <table>
 <thead>
 <tr>
@@ -628,11 +628,11 @@
 <ul>
 <li>Click <strong>Configuration&gt;Template</strong></li>
 </ul>
-<p><img alt="" src="pics/t8a-Configuration-Policy.png" /></p>
+<p><img alt="" src="../pics/t8a-Configuration-Policy.png" /></p>
 <ul>
 <li>Click <strong>Add Policy</strong></li>
 </ul>
-<p><img alt="" src="pics/t8a-Add-Policy.png" /></p>
+<p><img alt="" src="../pics/t8a-Add-Policy.png" /></p>
 <ul>
 <li>Select <strong>Site</strong> and click <strong>New Site List</strong>, enter the details as per below table and click <strong>Add</strong>.</li>
 </ul>
@@ -679,13 +679,13 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="pics/t8a-Add-Site-list.png" /></p>
+<p><img alt="" src="../pics/t8a-Add-Site-list.png" /></p>
 <p>Once you enter all the sites, below is how the <strong>List</strong> will look like.</p>
-<p><img alt="" src="pics/t8a-Site-list.png" /></p>
+<p><img alt="" src="../pics/t8a-Site-list.png" /></p>
 <ul>
 <li>Now Select <strong>TLOC</strong>, click <strong>New TLOC List</strong>, enter the details as per below table then click <strong>Add</strong>.</li>
 </ul>
-<p><img alt="" src="pics/t8a-Add-TLOC-list.png" /></p>
+<p><img alt="" src="../pics/t8a-Add-TLOC-list.png" /></p>
 <p>Fill in TLOC details as per table below</p>
 <table>
 <thead>
@@ -748,11 +748,11 @@
 </tbody>
 </table>
 <p>Enter Data-Center TLOC values for color <strong>mpls</strong> and click <strong>Add TLOC</strong></p>
-<p><img alt="" src="pics/t8a-Add-DC-TLOC-1.png" /></p>
+<p><img alt="" src="../pics/t8a-Add-DC-TLOC-1.png" /></p>
 <p>Enter Data-Center TLOC values for color <strong>private1</strong> and click <strong>Save</strong></p>
-<p><img alt="" src="pics/t8a-Add-DC-TLOC-2.png" /></p>
+<p><img alt="" src="../pics/t8a-Add-DC-TLOC-2.png" /></p>
 <p>Repeat the same step for Branch 1, 2 and AWS TLOCs, below is how the output will look like once you complete this task.</p>
-<p><img alt="" src="pics/t8a-TLOC-list.png" /></p>
+<p><img alt="" src="../pics/t8a-TLOC-list.png" /></p>
 <ul>
 <li>For adding VPN List Select <strong>VPN</strong>, click <strong>New VPN List</strong>, enter the details as per below table then click <strong>Add</strong>.</li>
 </ul>
@@ -778,21 +778,21 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="pics/t8a-Add-VPN-list1.png" /></p>
+<p><img alt="" src="../pics/t8a-Add-VPN-list1.png" /></p>
 <p>Repeat the same task for AppVPN and Marketing. Once the task is complete, below is how the VPN list looks like.</p>
-<p><img alt="" src="pics/t8a-VPN-list.png" /></p>
+<p><img alt="" src="../pics/t8a-VPN-list.png" /></p>
 </li>
 <li>
 <p>Click <strong>Next</strong>, below page will open. Click <strong>Add Topology</strong> then click <strong>Custom Control (Route &amp; TLOC)</strong></p>
-<p><img alt="" src="pics/t8a-Add-topology.png" /></p>
+<p><img alt="" src="../pics/t8a-Add-topology.png" /></p>
 <p>Below page will open, on the Middle-Right corner, click <strong>pencil</strong> icon</p>
-<p><img alt="" src="pics/t8a-topology-default-action1.png" /></p>
+<p><img alt="" src="../pics/t8a-topology-default-action1.png" /></p>
 </li>
 </ul>
 <p>Change the <strong>Default Action</strong> from <strong>Reject</strong> to <strong>Accept</strong>, then click <strong>Save Match And Action</strong></p>
-<p><img alt="" src="pics/t8a-topology-default-action2.png" /></p>
+<p><img alt="" src="../pics/t8a-topology-default-action2.png" /></p>
 <p>Verify <strong>Default Action</strong> is changed to <strong>Accept</strong> </p>
-<p><img alt="" src="pics/t8a-topology-default-action3.png" /></p>
+<p><img alt="" src="../pics/t8a-topology-default-action3.png" /></p>
 <ul>
 <li>
 <p>Enter <strong>Name</strong> and <strong>Description</strong> and click <strong>Sequence Type</strong></p>
@@ -800,45 +800,45 @@
 <li><strong>Name</strong>: <code>Hub-Spoke</code></li>
 <li><strong>Description</strong>: <code>Hub and Spoke Topology</code></li>
 </ul>
-<p><img alt="" src="pics/t8a-Seuqence-Rule1.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Rule1.png" /></p>
 <p>Click <strong>Route</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Rule2.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Rule2.png" /></p>
 </li>
 <li>
 <p>Click <strong>Sequence Rule</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type1.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type1.png" /></p>
 </li>
 </ul>
 <p>Click <strong>Site</strong> and under <strong>Site list</strong> Select <strong>CL-Branch1</strong>, then click <strong>Action</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type4.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type4.png" /></p>
 <p>Select <strong>Accept</strong> then click <strong>TLOC</strong>. Under <strong>TLOC List</strong> enter <strong>Date-Center</strong> then click <strong>Save Match And Actions</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type6.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type6.png" /></p>
 <p>Repeat the same steps for CL-Branch2 and AWS. Below is the output you complete these steps. Click <strong>Save Control Policy</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type8.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type8.png" /></p>
 <ul>
 <li>
 <p>Now we will create TLOC policy that will block Branches TLOC towards AWS and vice versa.</p>
 <p>Click <strong>Sequence Type</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Rule1a.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Rule1a.png" /></p>
 <p>Click <strong>TLOC</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Rule2a.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Rule2a.png" /></p>
 <p>Click <strong>Sequence Rule</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type1.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type1.png" /></p>
 <p>Click <strong>Site</strong> and add <strong>AWS</strong> then click <strong>Save and Match Action</strong>
-<img alt="" src="pics/t8a-TLOC-rule1.png" /></p>
+<img alt="" src="../pics/t8a-TLOC-rule1.png" /></p>
 </li>
 </ul>
 <p>Repeat the rule for <strong>AllBranches</strong> and click <strong>Save and Match Action</strong></p>
 <p>Click <strong>Save Control Policy</strong></p>
-<p><img alt="" src="pics/t8a-Save-Policy.png" /></p>
+<p><img alt="" src="../pics/t8a-Save-Policy.png" /></p>
 <ul>
 <li>
 <p>Click <strong>Next</strong>, below screen will appear.</p>
-<p><img alt="" src="pics/t8a-Seuqence-Type9.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type9.png" /></p>
 </li>
 <li>
 <p>Click <strong>Next</strong> again on <strong>Application Aware Routing</strong> Screen</p>
-<p><img alt="" src="pics/t8a-Seuqence-Type10.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type10.png" /></p>
 </li>
 <li>
 <p>Enter <strong>Policy Name</strong> and <strong>Description</strong> then click <strong>New Site List</strong> </p>
@@ -846,17 +846,17 @@
 <li><strong>Name</strong>: <code>Hub-Spoke</code></li>
 <li><strong>Description</strong>: <code>Hub and Spoke Policy</code></li>
 </ul>
-<p><img alt="" src="pics/t8a-Seuqence-Type11.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type11.png" /></p>
 <p>On <strong>Outbound Site List</strong> select <strong>CL-Branch1</strong>, <strong>Cl-Branch2</strong> and <strong>AWS</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type12.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type12.png" /></p>
 <p>Click <strong>Add</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type13.png" />   </p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type13.png" />   </p>
 <p>Click <strong>Save Policy</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type14.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type14.png" /></p>
 </li>
 <li>
 <p>The Hub and Spoke policy is created, verify policy clicking <strong>"..."</strong> on the right side and select <strong>Preview</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type15.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type15.png" /></p>
 <p>Below is the snapshot, what will be configured as part of the <strong>Hub and Spoke Policy</strong>  </p>
 </li>
 </ul>
@@ -942,15 +942,15 @@ control-policy Hub-Spoke out
 <ul>
 <li>
 <p>Click <strong>OK</strong>, then activate the policy clicking <strong>"..."</strong> on the right side and select <strong>Activate</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type15b.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type15b.png" /></p>
 </li>
 <li>
 <p>Click <strong>Activate</strong> again</p>
-<p><img alt="" src="pics/t8a-Seuqence-Type17.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type17.png" /></p>
 <p>The process will start and you can track the status from the <strong>Status Bar</strong>, once the task is sucessfully complete. You will <strong>Status</strong> as <strong>Sucess</strong></p>
-<p><img alt="" src="pics/t8a-Seuqence-Type18.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type18.png" /></p>
 <p>Below is the output once the task is sucessfully completed.</p>
-<p><img alt="" src="pics/t8a-Seuqence-Type19.png" /></p>
+<p><img alt="" src="../pics/t8a-Seuqence-Type19.png" /></p>
 </li>
 <li>
 <p>Verify the policy. Launch <strong>Mputty</strong> application from the Remote desktop and login to BR1-vEdge and run the following command</p>
@@ -959,25 +959,25 @@ control-policy Hub-Spoke out
 </li>
 </ul>
 <p>You can notice that the prefix 10.20.2.1/32 (BR2 VPN 20 Loopback20) is now received from  TLOC IP 10.1.0.1 (DC-TlOC) from both links (MPLS and Private1).</p>
-<p><img alt="" src="pics/t8a-Route-Verify-BR1.png" /></p>
+<p><img alt="" src="../pics/t8a-Route-Verify-BR1.png" /></p>
 <p>Verify the same from BR2 and you see prefixes are received from DC.</p>
-<p><img alt="" src="pics/t8a-Route-Verify-BR2.png" /></p>
+<p><img alt="" src="../pics/t8a-Route-Verify-BR2.png" /></p>
 <ul>
 <li>
 <p>Verify the traffic path using <strong>vManage</strong>. Open <strong>vManage</strong> select <strong>Monitoring&gt;Network</strong></p>
-<p><img alt="" src="pics/t8a-Trace-verify1.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify1.png" /></p>
 <p>Select <strong>BR1-vEdge</strong></p>
-<p><img alt="" src="pics/t8a-Trace-verify2.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify2.png" /></p>
 <p>Select <strong>Troubleshooting</strong> </p>
-<p><img alt="" src="pics/t8a-Trace-verify3.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify3.png" /></p>
 <p>Select <strong>Trace Route</strong> </p>
-<p><img alt="" src="pics/t8a-Trace-verify4.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify4.png" /></p>
 <p>Enter <strong>Destination IP</strong><em>, select </em><em>VPN-20</em><em> and click </em><em>Start</em>*</p>
-<p><img alt="" src="pics/t8a-Trace-verify5.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify5.png" /></p>
 <p>You can observe that the traffic is now going via <strong>DC-vEdge</strong>  Loopback IP <strong>10.200.100.1</strong> towards <strong>BR2-vEdge</strong>.</p>
-<p><img alt="" src="pics/t8a-Trace-verify6.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify6.png" /></p>
 <p>Now Verify <strong>BR2-vEdge</strong> traffic path for <strong>VPN-20</strong> towards <strong>BR1-vEdge</strong>. You will observe the below output.</p>
-<p><img alt="" src="pics/t8a-Trace-verify7.png" /></p>
+<p><img alt="" src="../pics/t8a-Trace-verify7.png" /></p>
 <p>Verify connectivity between AWS and Branches on all VPNs (10, 20, 30)</p>
 </li>
 </ul>

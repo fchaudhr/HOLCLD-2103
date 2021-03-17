@@ -555,7 +555,7 @@
 <pre><code>https://198.18.1.10
 </code></pre>
 <p>Note: you may also log into vManage on Chrome by clicking its shortcut on the Desktop to access vManage GUI as shown below:</p>
-<p><img alt="vManage" src="pics/t2-vManage_Access2vManage.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_Access2vManage.png" /></p>
 <table>
 <thead>
 <tr>
@@ -569,10 +569,10 @@
 </tbody>
 </table>
 <p>Below URL shows the logon screen of vManage:</p>
-<p><img alt="vManage" src="pics/t2-vManage_Login.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_Login.png" /></p>
 <p>The vManage dashboard will be displayed. The dashboard provides a quick summary of the network. At the top, a status indicating reachability will be displayed for any vSmart controllers, vEdge routers, and vBond orchestrators that are installed and have been added to vManage. Here, at a glance, you can view the health of the entire network including the operational state of any device, total number of reboots and crashes, and the state of all controller certificates. This visibility into the network eases the task of managing the SDWAN devices. </p>
 <p>The number of controllers will be shown with a green up arrow (indicating reachable), or a red down arrow (indicating unreachable).</p>
-<p><img alt="vManage" src="pics/t2-vManage_Dashboard.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_Dashboard.png" /></p>
 <table>
 <thead>
 <tr>
@@ -597,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_Monitor.png" /> </p>
+<p><img alt="vManage" src="../pics/t2-vManage_Monitor.png" /> </p>
 <ul>
 <li><strong>Configuration</strong><ul>
 <li><strong>Devices:</strong> Add or delete devices from the overlay network.</li>
@@ -610,7 +610,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_Configuration.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_Configuration.png" /></p>
 <ul>
 <li><strong>Tools</strong><ul>
 <li><strong>SSH Terminal:</strong> Establish an SSH session to a SDWAN device.</li>
@@ -619,7 +619,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_Tools.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_Tools.png" /></p>
 <ul>
 <li><strong>Maintenance</strong><ul>
 <li><strong>Software Repository:</strong></li>
@@ -628,7 +628,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_Maintenance.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_Maintenance.png" /></p>
 <ul>
 <li><strong>Administration</strong><ul>
 <li><strong>Settings:</strong> Configure organization name and certificate authorization settings.</li>
@@ -637,20 +637,20 @@
 </ul>
 </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_Administration.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_Administration.png" /></p>
 <ul>
 <li><strong>vAnalytics</strong><ul>
 <li><strong>Launch vAnalytics:</strong> View, at a glance, the performance and availability of the Viptela overlay network, including metrics for carriers, tunnels, and applications.</li>
 </ul>
 </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vAnalytics.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vAnalytics.png" /></p>
 <h2 id="step-2-changing-vbond-ip-address-on-vmanage">Step 2: Changing vBond IP Address on vManage</h2>
 <p>In this step, you will change vBond IP Address on vManage. </p>
 <ul>
 <li>
 <p>Launch <strong>Mputty</strong> application from the Remote desktop by clicking on it's icon on the desktop:</p>
-<p><img alt="Mputty" src="pics/t3-mputty.png" /></p>
+<p><img alt="Mputty" src="../pics/t3-mputty.png" /></p>
 </li>
 <li>
 <p>Using <strong>MPutty</strong> on your Remote Desktop session, initiate a <strong>SSH</strong> session to the <strong>vManage</strong> with <strong>IP address</strong> of <strong>198.18.1.10</strong>.  You can use credentials of <code>admin</code> and <code>admin</code> for  authentication.</p>
@@ -678,7 +678,7 @@
 </li>
 </ul>
 <p>Below screenshot shows <code>VPN 0</code> configuration and pre-configured <strong>vBond IP address</strong> as <strong>128.107.66.118</strong>.</p>
-<p><img alt="vManage" src="pics/t2-vManage_vBondIP.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vBondIP.png" /></p>
 <p>Reconfigure vBond IP address from vManage by executing below command;</p>
 <pre><code>config t
 vpn 0
@@ -697,7 +697,7 @@ commit and-quit
 </tr>
 </tbody>
 </table>
-<p><img alt="vManage" src="pics/t2-vManage_vBondIP2.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vBondIP2.png" /></p>
 <table>
 <thead>
 <tr>
@@ -711,7 +711,7 @@ commit and-quit
 </tbody>
 </table>
 <p>Navigate to Dashboard and check the vBond orchestrators' status is updated with a green up arrow (indicating reachable).</p>
-<p><img alt="vManage" src="pics/t2-vManage_vBondIP3.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vBondIP3.png" /></p>
 <h2 id="step-3-changing-vbond-ip-address-on-vsmart-and-exploring-vsmart">Step 3: Changing vBond IP Address on vSmart and Exploring vSmart</h2>
 <p>In this step we will update vSmart template on vManage, and change vBond IP address on VSmart. Then we will verify control connections on vSmart, and status of vSmart on vManage Dashboard.</p>
 <ul>
@@ -734,15 +734,15 @@ commit and-quit
 <ul>
 <li>On the vManage GUI, navigate to <strong>Configuration &gt; Templates</strong>.  </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmartTemplate.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmartTemplate.png" /></p>
 <ul>
 <li>Under <strong>Device</strong> tab select <strong>CL-vSmart-NATvbond</strong> template and then <strong>Click</strong> the three dots <strong><code>...</code></strong> on the right side and  <strong>Select</strong>  <code>Edit</code> option from the drop down menu as shown in the below screenshot:</li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmartTemplate2.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmartTemplate2.png" /></p>
 <ul>
 <li>Scroll down and find <code>vpn 0</code> configuration and select vbond IP address.</li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmartTemplate3.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmartTemplate3.png" /></p>
 <ul>
 <li>
 <p>Replace <code>{vbond-public-ip}</code> with vBond IP address of your pod and click <strong>Update</strong>.</p>
@@ -760,19 +760,19 @@ commit and-quit
 </table>
 </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmartTemplate4.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmartTemplate4.png" /></p>
 <ul>
 <li>Click <strong>Next</strong></li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmartTemplate5.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmartTemplate5.png" /></p>
 <ul>
 <li>Click <strong>Configure Devices</strong></li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmartTemplate6.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmartTemplate6.png" /></p>
 <ul>
 <li>Verify that configuration template is updated successfully and scheduled to be attached to vSmart as shown in below screenshot.</li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmartTemplate7.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmartTemplate7.png" /></p>
 <ul>
 <li>
 <p>Since vSmart is still not reachable, vBond IP address on vSmart is to be updated for once only through the CLI to make it online. Once vSmart is online and its status on vManage is up, vManage configuration template will be in effect to maintain it and any configuration change will not be allowed through the CLI. </p>
@@ -781,7 +781,7 @@ commit and-quit
 <p>Launch <strong>Mputty</strong> application from the Remote desktop by clicking on it's icon on the desktop to initiate a <strong>SSH</strong> session to the <strong>vSmart</strong>.  You can use credentials of <code>admin</code> and <code>admin</code> for  authentication.</p>
 </li>
 </ul>
-<p><img alt="Mputty" src="pics/t3-mputty.png" /></p>
+<p><img alt="Mputty" src="../pics/t3-mputty.png" /></p>
 <ul>
 <li>If prompted for "Putty Security Alert" then Trust the host by clicking "Yes" on dialog box.  </li>
 <li>
@@ -806,7 +806,7 @@ commit and-quit
 </li>
 </ul>
 <p>Below screenshot shows <code>VPN 0</code> configuration and pre-configured <strong>vBond IP address</strong> as <strong>128.107.66.118</strong>.</p>
-<p><img alt="vManage" src="pics/t2-vManage_vSmart.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmart.png" /></p>
 <p>Reconfigure vBond IP address from vManage by executing below command;</p>
 <pre><code>    config t
     vpn 0
@@ -825,7 +825,7 @@ commit and-quit
 </tr>
 </tbody>
 </table>
-<p><img alt="vManage" src="pics/t2-vManage_vSmart2.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmart2.png" /></p>
 <table>
 <thead>
 <tr>
@@ -841,7 +841,7 @@ commit and-quit
 <ul>
 <li>Navigate to Dashboard and check the vBond orchestrators' status is updated with a green up arrow (indicating reachable).</li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmart3.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmart3.png" /></p>
 <ul>
 <li>
 <p>On the <strong>Mputty</strong> client with <strong>SSH</strong> session to <code>vSmart</code> verify that template is successfully attached by running below <strong>command</strong>:</p>
@@ -856,7 +856,7 @@ commit and-quit
 </ul>
 </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmart4.png" /></p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmart4.png" /></p>
 <ul>
 <li><strong>Execute</strong> the below <strong>command</strong> to verify that system related configurations on vSmart: <pre><code>show run system
 </code></pre>
@@ -868,7 +868,7 @@ commit and-quit
     *  site-id
     *  organization name
     *  vBond DNS name of <code>vbond.cisco.com</code> </p>
-<p><img alt="vManage" src="pics/t2-vManage_vSmart5.png" /> </p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmart5.png" /> </p>
 <table>
 <thead>
 <tr>
@@ -886,7 +886,7 @@ commit and-quit
 </code></pre>
 </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmart6.png" /> </p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmart6.png" /> </p>
 <ul>
 <li>
 <p>You may also execute <code>show run</code> command to view the full configuration of vSmart</p>
@@ -899,13 +899,13 @@ show certificate installed
 </li>
 </ul>
 <p>Below screenshot shows the partial output of the above command. </p>
-<p><img alt="vManage" src="pics/t2-vManage_vSmart7.png" /> </p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmart7.png" /> </p>
 <ul>
 <li><strong>Run</strong> the below <strong>command</strong> to see the list of control connections of vSmart<pre><code>show control connections
 </code></pre>
 </li>
 </ul>
-<p><img alt="vManage" src="pics/t2-vManage_vSmart8.png" /> </p>
+<p><img alt="vManage" src="../pics/t2-vManage_vSmart8.png" /> </p>
 <p>From the above output you can:</p>
 <ul>
 <li>confirm that <strong>State</strong> of control plane connection to vManage is <strong>up</strong></li>
@@ -939,7 +939,7 @@ show certificate installed
 <ul>
 <li>
 <p>Launch <strong>Mputty</strong> application from the Remote desktop by clicking on it's icon on the desktop to initiate a <strong>SSH</strong> session to the <strong>vBond</strong>.  You can use credentials of <code>admin</code> and <code>admin</code> for  authentication.</p>
-<p><img alt="Mputty" src="pics/t3-mputty.png" /></p>
+<p><img alt="Mputty" src="../pics/t3-mputty.png" /></p>
 <ul>
 <li>If prompted for "Putty Security Alert" then Trust the host by clicking "Yes" on dialog box.  </li>
 <li>The <strong>SSH credentials</strong> (username and password) are <code>admin</code> and <code>admin</code> respectively</li>
@@ -968,7 +968,7 @@ show certificate installed
     *  system-ip 
     *  organization name
     *  vBond private IP of <code>198.18.1.11</code> </p>
-<p><img alt="Mputty" src="pics/t2-vManage_vBond.png" />    </p>
+<p><img alt="Mputty" src="../pics/t2-vManage_vBond.png" />    </p>
 <ul>
 <li>
 <p>You may also execute <code>show run</code> command to view the full configuration of vBond</p>
@@ -981,7 +981,7 @@ show certificate installed
 </li>
 </ul>
 <p>Below screenshot shows the partial output of the above command. </p>
-<p><img alt="Mputty" src="pics/t2-vManage_vBond2.png" />       </p>
+<p><img alt="Mputty" src="../pics/t2-vManage_vBond2.png" />       </p>
 <hr />
 <p>This concludes the process to explore SDWAN Control Plane (vManage GUI, vSmart and vBond) and change vBond IP address on vManage and vSmart.</p>
                 

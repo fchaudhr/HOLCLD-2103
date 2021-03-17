@@ -539,14 +539,14 @@
 <li>The <strong>vManage dashboard</strong> will be displayed. At the top, a status indicating reachability will be displayed for any vSmart controllers, vEdge routers, and vBond orchestrators that are installed and have been added to vManage. Verify the vEdges are all showing up before moving on. The number of controllers will be shown with a green up arrow (indicating reachable), or a red down arrow (indicating unreachable).</li>
 <li>The <strong>Control Status</strong> should show that all of the control connections are up for all vEdge routers and vSmart controllers, and the <strong>Site Health View</strong> should show Full Connectivity to all sites, the data center, branches and public cloud (AWS). </li>
 </ul>
-<p><img alt="AWS Devices" src="pics/t7-AWS_Dashboard.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS_Dashboard.png" /></p>
 <p><a name="vEdge2"></a>
 * On the vManage GUI, navigate to <strong>Configuration &gt; Devices</strong> to view running configuration on <strong>vEdge1</strong>. </p>
-<p><img alt="AWS Devices" src="pics/t7-AWS_Devices.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS_Devices.png" /></p>
 <ul>
 <li>Make sure <code>WAN Edge List</code>is selected in Devices GUI. <strong>Select</strong> <code>vEdge1</code> then <strong>Click</strong> the three dots <strong><code>...</code></strong> on the right side of this device and <strong>Select</strong>  <code>Running Configuration</code> option from the drop down menu as shown in the below screenshot.</li>
 </ul>
-<p><img alt="AWS Devices" src="pics/t7-AWS_RunningConfig.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS_RunningConfig.png" /></p>
 <ul>
 <li>You can review and verify that; <ul>
 <li>this configuration is the same one added via <strong>CLI Template</strong> in <strong>Step 1 Task 7a</strong> </li>
@@ -559,7 +559,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="AWS Devices" src="pics/t7-AWS_RunningConfig2.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS_RunningConfig2.png" /></p>
 <table>
 <thead>
 <tr>
@@ -580,22 +580,22 @@
 </ul>
 </li>
 </ul>
-<p><img alt="AWS Devices" src="pics/t7-AWS_RunningConfig3.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS_RunningConfig3.png" /></p>
 <ul>
 <li>On the vManage GUI, navigate to <strong>Configuration &gt; Certificates</strong> to verify that certificate has been installed and vEdge device in <code>Valid</code> status.</li>
 </ul>
-<p><img alt="AWS Certification" src="pics/t7-AWS_Certificates2.png" /></p>
+<p><img alt="AWS Certification" src="../pics/t7-AWS_Certificates2.png" /></p>
 <ul>
 <li>
 <p>On the vManage GUI, navigate to <strong>Monitor &gt; Network</strong>.  </p>
 <ul>
 <li>You can verify that <strong>vEdge1</strong> is reachable and has a total of two (2) control connections. In order to visualize the control connections that have been established you need to navigate to <strong>vManage &gt; Monitor &gt; Network &gt; vEdge1 &gt; Control Connections</strong>.</li>
 </ul>
-<p><img alt="AWS Monitor" src="pics/t7-AWS_Monitor.png" /></p>
+<p><img alt="AWS Monitor" src="../pics/t7-AWS_Monitor.png" /></p>
 <ul>
 <li>Click <strong>vEdge1</strong> and then <strong>Control Connections</strong> to verify that <strong>vEdge1</strong> has established two (2) connections to the Control Plane. </li>
 </ul>
-<p><img alt="AWS Monitor" src="pics/t7-AWS_ControlConn.png" /></p>
+<p><img alt="AWS Monitor" src="../pics/t7-AWS_ControlConn.png" /></p>
 </li>
 <li>
 <p>From the screenshot you can;</p>
@@ -612,20 +612,20 @@
 <p>To view the state of all of the IPSec tunnel or data plane connections, select <strong>Tunnel</strong> under the <strong>WAN</strong> menu in the left column.</p>
 </li>
 </ul>
-<p><img alt="AWS Monitor" src="pics/t7-AWS_IPsec.png" /></p>
+<p><img alt="AWS Monitor" src="../pics/t7-AWS_IPsec.png" /></p>
 <ul>
 <li>Click <strong>Real Time</strong></li>
 </ul>
-<p><img alt="AWS Monitor" src="pics/t7-AWS_RealTime.png" /></p>
+<p><img alt="AWS Monitor" src="../pics/t7-AWS_RealTime.png" /></p>
 <ul>
 <li>Then, enter <code>BGP Neighbors</code> and click <strong>Do not Filter</strong> on the <strong>Select Filter</strong> pop-up window</li>
 </ul>
-<p><img alt="AWS Monitor" src="pics/t7-AWS_Bgp.png" /></p>
-<p><img alt="AWS Monitor" src="pics/t7-AWS_bgp2.png" /></p>
+<p><img alt="AWS Monitor" src="../pics/t7-AWS_Bgp.png" /></p>
+<p><img alt="AWS Monitor" src="../pics/t7-AWS_bgp2.png" /></p>
 <ul>
 <li>Enter <code>IP Routes</code></li>
 </ul>
-<p><img alt="AWS Monitor" src="pics/t7-AWS_IPRoutes.png" /></p>
+<p><img alt="AWS Monitor" src="../pics/t7-AWS_IPRoutes.png" /></p>
 <ul>
 <li>Execute same verification steps for <a href="#vEdge2"><strong>vEdge2</strong></a>.</li>
 </ul>
@@ -651,10 +651,10 @@
 <ul>
 <li>On the vManage GUI, navigate to <strong>Tools &gt; SSH Terminal</strong>. From the left pane, select the device group to which the device belongs.</li>
 </ul>
-<p><img alt="AWS Devices" src="pics/t7-AWS_SSH.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS_SSH.png" /></p>
 <p><a name="vEdge2SSH"></a>
 * Click on <strong>vEdge1</strong> and on the right pane.</p>
-<p><img alt="AWS Devices" src="pics/t7-AWS_SSH2.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS_SSH2.png" /></p>
 <ul>
 <li>Enter the <strong>SSH credentials</strong> (username and password) as follows: <code>admin</code> and <code>admin</code> respectively to log in to the device.</li>
 </ul>
@@ -687,7 +687,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="AWS Devices" src="pics/t7-AWS-vEdge1showsystem.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS-vEdge1showsystem.png" /></p>
 <table>
 <thead>
 <tr>
@@ -706,7 +706,7 @@
 <pre><code>show run vpn 0
 </code></pre>
 <p>Below screenshot shows the partial output of this command.  This command will confirm that; vEdge has one WAN link (under VPN 0) as per interface ge0/0 configuration and WAN link tunnel interface is configured with color public-internet which is a public color.</p>
-<p><img alt="AWS Devices" src="pics/t7-AWS-vEdge1showvpn0.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS-vEdge1showvpn0.png" /></p>
 </li>
 <li>
 <p>You may also execute <code>show run</code> command to view the full configuration of this vEdge</p>
@@ -717,7 +717,7 @@
 show certificate installed
 </code></pre>
 <p>Below screenshot shows the partial output of the above command.  Note that Issuer of the certificate is vManage</p>
-<p><img alt="AWS Devices" src="pics/t7-AWS-vEdge1showcert.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS-vEdge1showcert.png" /></p>
 </li>
 <li>
 <p><strong>Run</strong> the below <strong>command</strong> to see the list of control connections of this vEdge to the Control Plane (vManage, vSmart)</p>
@@ -726,7 +726,7 @@ show certificate installed
 <p>Below screenshot shows the output of this command.  Note it validates that <strong>vEdge1</strong> has:
 * One (1) control connections established to vSmart Controller
 * One (1) control connection established to vManage</p>
-<p><img alt="AWS Devices" src="pics/t7-AWS-vEdge1showconn.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS-vEdge1showconn.png" /></p>
 </li>
 <li>
 <p>In order to verify that related template is successfully attached,  execute below <strong>command</strong>:</p>
@@ -738,9 +738,9 @@ show certificate installed
 <li><code>Configuration template: CL-AWS_template</code></li>
 </ul>
 <p>Below screenshot shows the partial output of above command:</p>
-<p><img alt="AWS Devices" src="pics/t7-AWS-vEdge1showstatus.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS-vEdge1showstatus.png" /></p>
 <p><strong>Note:</strong> you can also verify the Mode (vManaged or CLI) on vManage GUI by navigating to <strong>Configuration &gt; Devices</strong> and under <strong>WAN Edge List</strong> tab scrolling to the right will show the <code>Mode</code> option for each device.  If there are any discrepancies then refer to the instructor.</p>
-<p><img alt="AWS Devices" src="pics/t7-AWS-vEdge1Mode.png" /></p>
+<p><img alt="AWS Devices" src="../pics/t7-AWS-vEdge1Mode.png" /></p>
 </li>
 <li>
 <p>You can run various other commands to verify the updated configurations (such as DHCP on interface ge0/0, control connections to Controllers on this new interface etc)  as reflected in "CLI Template":</p>

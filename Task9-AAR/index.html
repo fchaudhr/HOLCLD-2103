@@ -559,47 +559,47 @@
 <ul>
 <li>Click <strong>Configuration&gt;Policy</strong> </li>
 </ul>
-<p><img alt="" src="pics/t9-vmanage-policy.png" /></p>
+<p><img alt="" src="../pics/t9-vmanage-policy.png" /></p>
 <ul>
 <li>
 <p>On the upper right hand side click <strong>Custom Option</strong>, under <strong>Centralized Policy</strong> select <strong>CLI Policy</strong></p>
-<p><img alt="" src="pics/t9-CLI-Policy.png" /></p>
+<p><img alt="" src="../pics/t9-CLI-Policy.png" /></p>
 </li>
 <li>
 <p>Click <strong>Add Policy</strong></p>
 </li>
 </ul>
-<p><img alt="" src="pics/t9-CLI-Policy-2.png" /></p>
+<p><img alt="" src="../pics/t9-CLI-Policy-2.png" /></p>
 <ul>
 <li>
 <p>Enter name of the Policy, description and click <strong>Select File</strong></p>
-<p><img alt="" src="pics/t9-CLI-Policy-3.png" /></p>
+<p><img alt="" src="../pics/t9-CLI-Policy-3.png" /></p>
 </li>
 <li>
 <p>Under <strong>Desktop&gt;Policy</strong> folder select file name <strong>AAR.txt</strong></p>
-<p><img alt="" src="pics/t9-CLI-Policy-4.png" /></p>
+<p><img alt="" src="../pics/t9-CLI-Policy-4.png" /></p>
 </li>
 <li>
 <p>Click <strong>Add</strong></p>
-<p><img alt="" src="pics/t9-CLI-Policy-5.png" /></p>
+<p><img alt="" src="../pics/t9-CLI-Policy-5.png" /></p>
 </li>
 <li>
 <p>Once the policy is added it will be available for activation.</p>
 </li>
 </ul>
-<p><img alt="" src="pics/t9-CLI-Policy-6.png" /></p>
+<p><img alt="" src="../pics/t9-CLI-Policy-6.png" /></p>
 <ul>
 <li>Click <strong>...</strong> and select <strong>Activate</strong></li>
 </ul>
-<p><img alt="" src="pics/t9-CLI-Policy-7.png" /></p>
+<p><img alt="" src="../pics/t9-CLI-Policy-7.png" /></p>
 <ul>
 <li>Click <strong>Activate</strong> again</li>
 </ul>
-<p><img alt="" src="pics/t9-CLI-Policy-8.png" /></p>
+<p><img alt="" src="../pics/t9-CLI-Policy-8.png" /></p>
 <ul>
 <li>Policy Activation Process will start and you will see <strong>Success</strong> Status</li>
 </ul>
-<p><img alt="" src="pics/t9-CLI-Policy-9.png" /></p>
+<p><img alt="" src="../pics/t9-CLI-Policy-9.png" /></p>
 <h2 id="step-2-policy-verification">Step 2: Policy Verification</h2>
 <ul>
 <li>Log into <strong>BR2-vEdge</strong> and check if policy is applied. Issue the following command.</li>
@@ -694,26 +694,26 @@ from-vsmart lists app-list YouTube
 <li>Under normal conditions, both BR2-vEdge is using both interfaces to send traffic as show in the output.</li>
 </ul>
 <p><strong><code>show app-route stats</code></strong></p>
-<p><img alt="" src="pics/t9-AAR-policyverfication1.png" /></p>
+<p><img alt="" src="../pics/t9-AAR-policyverfication1.png" /></p>
 <ul>
 <li>
 <p>Lets inject delay using traffic generator on <strong>BR2-vEdge Internet (color private1)</strong> link.</p>
 </li>
 <li>
 <p>Open a new <strong>Browser</strong> tab and on the bookmark toolbar click <strong>WANem</strong>.</p>
-<p><img alt="" src="pics/t9-AAR-policyverfication2.png" /></p>
+<p><img alt="" src="../pics/t9-AAR-policyverfication2.png" /></p>
 </li>
 <li>
 <p>Click <strong>Basic Mode</strong></p>
-<p><img alt="" src="pics/t9-AAR-policyverfication3.png" /></p>
+<p><img alt="" src="../pics/t9-AAR-policyverfication3.png" /></p>
 </li>
 <li>
 <p>Under <strong>Bridges</strong> ensure <strong>br1</strong> is selected. Under <strong>Interface eth2</strong> enter delay <strong>300</strong> and <strong>Apply settings</strong></p>
-<p><img alt="" src="pics/t9-AAR-policyverfication4.png" /></p>
+<p><img alt="" src="../pics/t9-AAR-policyverfication4.png" /></p>
 </li>
 <li>
 <p>Lets verify the policy out again on BR2-vEdge by using command <strong><code>show app-route stats</code></strong></p>
-<p><img alt="" src="pics/t9-AAR-policyverfication6.png" /></p>
+<p><img alt="" src="../pics/t9-AAR-policyverfication6.png" /></p>
 </li>
 </ul>
 <p>From the output above you can all traffic matching to <strong>sla-class-index</strong> moved to link color <strong>private1</strong></p>
