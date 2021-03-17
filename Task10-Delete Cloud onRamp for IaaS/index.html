@@ -1,0 +1,671 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for HOLCLD-2103">
+      
+      
+      
+        <meta name="author" content="CX Team">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Optional Task 10 Delete Cloud Onramp - Cisco Live 2021 HOLCLD-2103</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#optional-task-10-deleting-cloud-onramp-for-iaas-and-verification" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Cisco Live 2021 HOLCLD-2103" class="md-header__button md-logo" aria-label="Cisco Live 2021 HOLCLD-2103" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cisco Live 2021 HOLCLD-2103
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Optional Task 10 Delete Cloud Onramp
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/fchaudhr/HOLCLD-2103/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cisco Live 2021 HOLCLD-2103" class="md-nav__button md-logo" aria-label="Cisco Live 2021 HOLCLD-2103" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Cisco Live 2021 HOLCLD-2103
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/fchaudhr/HOLCLD-2103/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Topology.md" class="md-nav__link">
+        Topology
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task1-Connect/" class="md-nav__link">
+        Task 1 Remote Connection
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task2-Exploring%20Control%20Plane/" class="md-nav__link">
+        Task 2 Control Plane
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task3-vEdge/" class="md-nav__link">
+        Task 3 vEdge on internal networks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task4-Full-Mesh/" class="md-nav__link">
+        Task 4 Full-Mesh Data Plane on internal networks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task5-VPN%20creations/" class="md-nav__link">
+        Task 5 Establish VPN connectivity on Fabric
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task6-OSPF_service/" class="md-nav__link">
+        Task 6 Establish OSPF on Service Side
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task7a-Add%20and%20Attach%20AWS%20Template%20for%20vEdge%20Cloud%20Devices/" class="md-nav__link">
+        Task 7a Cloud onramp - AWS vEdge Template
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task7b-Cloud%20onRamp%20for%20IaaS/" class="md-nav__link">
+        Task 7b Cloud onRamp for Iaas (AWS)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task7c-Verify%20vEdge%20Cloud%20Connectivity/" class="md-nav__link">
+        Task 7c Cloud onramp - Verify vEdge Cloud connectivity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task8-HubnSpoke_VPN20/" class="md-nav__link">
+        Optional Task 8 Hub & Spoke Topology
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task9-AAR/" class="md-nav__link">
+        Optional Task 9 AAR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Optional Task 10 Delete Cloud Onramp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Optional Task 10 Delete Cloud Onramp
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-deleting-cloud-onramp-for-iaas-and-verification" class="md-nav__link">
+    Step 1: Deleting Cloud onRamp for IaaS and Verification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task11-Additional_PHB/" class="md-nav__link">
+        Optional Task 11 Partial Hub and Spoke
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-deleting-cloud-onramp-for-iaas-and-verification" class="md-nav__link">
+    Step 1: Deleting Cloud onRamp for IaaS and Verification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fchaudhr/HOLCLD-2103/edit/master/docs/Task10-Delete Cloud onRamp for IaaS.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="optional-task-10-deleting-cloud-onramp-for-iaas-and-verification">Optional Task 10 - Deleting Cloud onRamp for IaaS and Verification</h1>
+<p>As per previous tasks, <strong>Cloud OnRamp for IaaS</strong> created public cloud resources in AWS such as transit VPC; two (2) vEdge Cloud devices, <strong>vEdge1</strong> and <strong>vEdge2</strong>; virtual private gateway, vpn connections between host and transit VPCs etc. This Task will delete these resources</p>
+<p><strong>Pre-requisite 1:</strong>  SDWAN controllers must be fully operational.  If those are not installed (or operational) then please complete the previous Tasks first.</p>
+<p><strong>Pre-requisite 2:</strong>  Pre-configured <strong>Cloud OnRamp for IaaS</strong> must be fully operational.  If it is not operational then please complete the previous Tasks first.</p>
+<p>You configure and manage <strong>Cloud OnRamp for IaaS</strong> through the vManage. A configuration wizard in the vManage automates the bring-up the transit to your public cloud account and automates the connections between public-cloud and branches in SDWAN overlay network. We will use same configuration wizard to delete it.</p>
+<h2 id="step-1-deleting-cloud-onramp-for-iaas-and-verification">Step 1: Deleting Cloud onRamp for IaaS and Verification</h2>
+<p>In this step you will unmap host transit VPC and then elete public cloud resources in AWS. </p>
+<ul>
+<li>Log on the vManage from a web browser (if not already open) and use credentials of <code>admin</code> and <code>admin</code>:</li>
+</ul>
+<p>~~~
+  https://198.18.1.10
+  ~~~</p>
+<pre><code>&gt; **Note:** if `admin/admin` credentials do not work then you may try using `cisco/cisco` or `cisco1/cisco1`
+</code></pre>
+<ul>
+<li>On the vManage GUI, navigate to <strong>Configuration &gt; Cloud onRamp for IaaS</strong> and click green up arrow under <strong>Mapped Host VPCs (Total: 1)</strong>. This will unmap host VPC.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp.png" /></p>
+<ul>
+<li>Then checkmark host VPC <strong>SDWAN-hostVPC#</strong> <code>#=1,2,3,...,16</code> and click <strong>Un-Map VPCs</strong>.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp2.png" /></p>
+<ul>
+<li>Click <strong>OK</strong>.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp3.png" /></p>
+<ul>
+<li>Confirm unmapping host VPC successfully completed.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp4.png" /></p>
+<blockquote>
+<p><strong>Note:</strong> Unmapping host VPC deletes all VPN connections to the VPN gateway in the host VPC, and then deletes the VPN gateway. When you make additional VPN connections to a mapped host VPC, they will be terminated as part of the unmapping process.</p>
+</blockquote>
+<ul>
+<li>Navigate back to <strong>Configuration &gt; Cloud onRamp for IaaS</strong> and click green up arrow under <strong>Transit VPCs (Total:1)</strong>. This will delete transit VPC.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp5.png" /></p>
+<ul>
+<li>Click <strong>Transit VPCs</strong></li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp6.png" /></p>
+<ul>
+<li>Click the <strong>Trash icon</strong> to the left of the row in order to delete the transit VPC.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp7.png" /></p>
+<ul>
+<li>Click <strong>OK</strong></li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp8.png" /></p>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp9.png" /></p>
+<ul>
+<li>Status can be followed through vManage and AWS Management Console. In order to confirm the changes on AWS Management Console; log on to AWS from a web browser (if not already open) and click on <strong>Sign In to the Console</strong> </li>
+</ul>
+<pre><code>https://aws.amazon.com/console
+</code></pre>
+<p>Use credentials of the following:</p>
+<ul>
+<li>Account ID = <code>807272386705</code></li>
+<li>IAM user name = <code>CLEUR_User#</code> <code>#=1,2,3,...,16</code></li>
+<li>Password = <code>CLEUR20</code></li>
+</ul>
+<p><img alt="AWS Region" src="pics/t7-AWS_login.png" /></p>
+<p>Once connected to AWS Management Console, verify assigned region is selected on the navigation bar for your given number.</p>
+<p>Select region list from up-right corner of the console as shown below and select your respective region. As an example, CLEUR_User1 is to select US East (N.Virginia) region.</p>
+<p><img alt="AWS Region" src="pics/t7-AWS_region_verfication.png" /></p>
+<p>Then click on <code>Services</code> on the navigation pane and select <strong>EC2</strong> from <strong>Compute</strong> menu. </p>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS5.png" /></p>
+<p>Select <strong>Instances</strong></p>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_CloudonRamp_CreateAWS6.png" /></p>
+<p>You will see vEdge Cloud instances has started to be terminated.</p>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp10.png" /></p>
+<p>On vManage, confirm that transit VPC, vEdges, interfaces, subnets and internet gateway have been successfully deleted.</p>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp11.png" /></p>
+<p>In order to confirm vEdges has been terminated successfully, go back to AWS Management Console and click <strong>Refresh</strong> the page.</p>
+<p><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp12.png" /></p>
+<p>Then, confirm transit VPC has been deleted by clicking on <code>Services</code> on the navigation pane and selecting <strong>VPC</strong> from <strong>Network &amp; Content Delivery</strong> menu.</p>
+<p><img alt="AWS hostVPC" src="pics/t7-AWS_select_VPC.png" /></p>
+<p>Click on <strong>Your VPCs</strong> on the VPC navigation pane.</p>
+<p><img alt="AWS Region" src="pics/t7-AWS_yourVPCs.png" /></p>
+<p>Confirm <code>SDWAN-transitVPC#</code> has been successfully deleted.</p>
+<h2 id="_1"><img alt="AWS CloudonRamp" src="pics/t7-AWS_DeleteCloudonRamp13.png" /></h2>
+<p>This concludes the process to delete <strong>Cloud onRamp for Iaas</strong> and execute verification.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Task9-AAR/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Optional Task 9 AAR
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Task11-Additional_PHB/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Optional Task 11 Partial Hub and Spoke
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>

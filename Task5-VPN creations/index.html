@@ -1,0 +1,1017 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for HOLCLD-2103">
+      
+      
+      
+        <meta name="author" content="CX Team">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Task 5 Establish VPN connectivity on Fabric - Cisco Live 2021 HOLCLD-2103</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#task-5-vpn-on-the-fabric" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Cisco Live 2021 HOLCLD-2103" class="md-header__button md-logo" aria-label="Cisco Live 2021 HOLCLD-2103" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cisco Live 2021 HOLCLD-2103
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Task 5 Establish VPN connectivity on Fabric
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/fchaudhr/HOLCLD-2103/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cisco Live 2021 HOLCLD-2103" class="md-nav__button md-logo" aria-label="Cisco Live 2021 HOLCLD-2103" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Cisco Live 2021 HOLCLD-2103
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/fchaudhr/HOLCLD-2103/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Topology.md" class="md-nav__link">
+        Topology
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task1-Connect/" class="md-nav__link">
+        Task 1 Remote Connection
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task2-Exploring%20Control%20Plane/" class="md-nav__link">
+        Task 2 Control Plane
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task3-vEdge/" class="md-nav__link">
+        Task 3 vEdge on internal networks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task4-Full-Mesh/" class="md-nav__link">
+        Task 4 Full-Mesh Data Plane on internal networks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Task 5 Establish VPN connectivity on Fabric
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Task 5 Establish VPN connectivity on Fabric
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sdwan-lab-topology" class="md-nav__link">
+    SDWAN Lab Topology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-vpn-10-on-branch-1-br1" class="md-nav__link">
+    Step 1: Create VPN 10 on Branch 1 (BR1)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-validate-vpn-10-config-on-branch-1" class="md-nav__link">
+    Step 2: Validate VPN 10 config on Branch 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-vpn-10-on-branch-2-br2" class="md-nav__link">
+    Step 3: Create VPN 10 on Branch 2 (BR2)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-verify-vpn-10-routing-on-br1-br2" class="md-nav__link">
+    Step 4: Verify VPN 10 routing on BR1 &amp; BR2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-vpn-10-on-data-center-dc" class="md-nav__link">
+    Step 5: Create VPN 10 on Data Center (DC)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-validate-vpn-10-config-on-dc" class="md-nav__link">
+    Step 6: Validate VPN 10 config on DC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-add-vpn-20-and-30-on-all-vedges-dc1-branch1-branch2" class="md-nav__link">
+    Step 7: Add VPN 20 and 30 on all vEdges (DC1, Branch1 &amp; Branch2)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task6-OSPF_service/" class="md-nav__link">
+        Task 6 Establish OSPF on Service Side
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task7a-Add%20and%20Attach%20AWS%20Template%20for%20vEdge%20Cloud%20Devices/" class="md-nav__link">
+        Task 7a Cloud onramp - AWS vEdge Template
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task7b-Cloud%20onRamp%20for%20IaaS/" class="md-nav__link">
+        Task 7b Cloud onRamp for Iaas (AWS)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task7c-Verify%20vEdge%20Cloud%20Connectivity/" class="md-nav__link">
+        Task 7c Cloud onramp - Verify vEdge Cloud connectivity
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task8-HubnSpoke_VPN20/" class="md-nav__link">
+        Optional Task 8 Hub & Spoke Topology
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task9-AAR/" class="md-nav__link">
+        Optional Task 9 AAR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task10-Delete%20Cloud%20onRamp%20for%20IaaS/" class="md-nav__link">
+        Optional Task 10 Delete Cloud Onramp
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task11-Additional_PHB/" class="md-nav__link">
+        Optional Task 11 Partial Hub and Spoke
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sdwan-lab-topology" class="md-nav__link">
+    SDWAN Lab Topology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-vpn-10-on-branch-1-br1" class="md-nav__link">
+    Step 1: Create VPN 10 on Branch 1 (BR1)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-validate-vpn-10-config-on-branch-1" class="md-nav__link">
+    Step 2: Validate VPN 10 config on Branch 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-vpn-10-on-branch-2-br2" class="md-nav__link">
+    Step 3: Create VPN 10 on Branch 2 (BR2)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-verify-vpn-10-routing-on-br1-br2" class="md-nav__link">
+    Step 4: Verify VPN 10 routing on BR1 &amp; BR2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-vpn-10-on-data-center-dc" class="md-nav__link">
+    Step 5: Create VPN 10 on Data Center (DC)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-validate-vpn-10-config-on-dc" class="md-nav__link">
+    Step 6: Validate VPN 10 config on DC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-add-vpn-20-and-30-on-all-vedges-dc1-branch1-branch2" class="md-nav__link">
+    Step 7: Add VPN 20 and 30 on all vEdges (DC1, Branch1 &amp; Branch2)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fchaudhr/HOLCLD-2103/edit/master/docs/Task5-VPN creations.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="task-5-vpn-on-the-fabric">Task 5 - VPN on the Fabric</h1>
+<p>This task will walk through the steps to create full mesh VPN on the SD-WAN Fabric.  Hence the traffic on these VPNs can be passed on the SDWAN Fabric keeping the end-to-end segmentation.  We will create VPN number 10, 20, 30 in this exercise.  These VPNs will exist on vEdges in BR1 and BR2 Branches as well as on Data Center (DC).</p>
+<p>This configuration of vEdge can be done via Feature Templates or by using CLI Template on the vManage.  We will use CLI Template of the vEdge for this lab.  To provide differentiation, two separate CLI Templates will be created for vEdges in DC and Branches.</p>
+<h4 id="sdwan-lab-topology">SDWAN Lab Topology</h4>
+<p>The logical topology of VPN number 10 is shown in below figure:</p>
+<p><img alt="VPN traffic" src="pics/t5-vpn10_topology.png" /></p>
+<p><strong>Pre-requisite:</strong>  SDWAN controllers and 3 vEdges (in Branches &amp; DC) must be fully operational.  If those are not installed (or not operational) then please complete the previous Tasks first.</p>
+<h2 id="step-1-create-vpn-10-on-branch-1-br1">Step 1: Create VPN 10 on Branch 1 (BR1)</h2>
+<p>A new VPN (number 10) will be used to pass traffic between Applications between Branches, the Data Centers and subsequently to the application hosted on AWS Cloud. </p>
+<ul>
+<li>
+<p>Log on to the vManage from a web browser (if not already open) and use credentials of <code>admin</code> and <code>admin</code>:</p>
+<pre><code>https://198.18.1.10
+</code></pre>
+</li>
+<li>
+<p>On the vManage GUI, navigate to <strong>Configuration &gt; Templates &gt; Device</strong>.  </p>
+</li>
+<li>
+<p>Then <strong>Select</strong> the CLI template named <strong>"CL-branch-1-vedge"</strong>.  Next, Click on the three dots on right-side of <strong>"CL-branch-1-vedge" &gt; Edit</strong> as shown in below screenshot. </p>
+<p><img alt="CLI Template" src="pics/t5-br1-clitemplate-edit2.png" /></p>
+</li>
+<li>
+<p>Edit option will allow you to add additional configurations in this template.  </p>
+<ul>
+<li><strong>Scroll</strong> all the way to the end of existing template, </li>
+<li>Then you can <strong>add</strong>  (copy &amp; paste will work) the below configuration at the end of the exiting template,</li>
+<li>Do not make any other changes to existing configurations in this template<pre><code>vpn 10
+ name AppVPN
+ interface ge0/3
+  ip address {{vpn10-IP-address}}/24
+  no shutdown
+</code></pre>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Above configuration must include <code>{{vpn10-IP-address}}</code> syntax.  Double curly brackets are interpreted as variable and this will be used to fill out IP addresses of each vEdge in the branch in subsequent bullet (during deployment of template)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">Important Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Be very careful in making configuration changes on vEdge.  <strong>Do NOT change</strong> any <strong>configuration</strong> of VPN 512 as it can result in loss of connectivity to the vEdge - which can not be restored.   You will have to start the lab again from Task #1 if you loose network connectivity to a vEdge.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>After adding above configuration to this Template, <strong>Click</strong> on <code>Update</code> button.  </p>
+</li>
+<li>
+<p>On the next screen, enter the <strong>ge0/3 IP address</strong> of <strong>vpn10-IP-address</strong> <code>10.3.0.3</code> for Branch-1 in the respective field and <strong>Click</strong> the <code>Next</code> button.  Below screenshot shows this:</p>
+<p><img alt="CLI Template" src="pics/t5-br1-clitemplate-vpn10ge03.png" /></p>
+</li>
+<li>
+<p>On the next screen,</p>
+<ul>
+<li><strong>Select</strong> the <code>BR1-vEdge</code> under the <strong>Device list</strong> section (left part of screen).  </li>
+<li>
+<p>Then <strong>Select</strong> both <code>"Config Preview"</code> and <code>"Config Diff"</code> options to verify that VPN 10 related configurations are added to this vEdge, and no changes to VPN 512 (or other interfaces) are done.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Important Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Be very careful in making configuration changes on vEdge.  <strong>Do NOT change</strong> any <strong>configuration</strong> of VPN 512 as it can result in loss of connectivity to the vEdge - which can not be restored.   You will have to start the lab again from Task #1 if you loose network connectivity to a vEdge.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Once you have verifed the config changes <strong>Click</strong> on <code>Configure Devices</code> button on the lower section of screen, as shown in below screenshot:</p>
+</li>
+</ul>
+<p><img alt="CLI Template" src="pics/t5-br1-clitemplate-loopback-configdev.png" /></p>
+</li>
+</ul>
+<p>This completes the configuration of VPN 10 on BR1-vEdge</p>
+<h2 id="step-2-validate-vpn-10-config-on-branch-1">Step 2: Validate VPN 10 config on Branch 1</h2>
+<p>In this step we will confirm that BR1-vEdge has been provisioned for VPN #10 (as executed in the previous step).  There are multiple ways to access the configuration of vEdge, such as:</p>
+<ul>
+<li><strong>Direct SSH</strong> to Management IP address (VPN 512) of the vEdges</li>
+<li>Initiate <strong>SSH</strong> to vEdges from the <strong>vManage GUI</strong></li>
+<li>Access the Running configuration of vEdges within vManage GUI by clicking on <strong>Configuration &gt; Devices &gt; Click on three dots on the right</strong> (next to the name) of vEdge and click <strong>Running Configuration</strong> from the drop-down menu</li>
+</ul>
+<p>Below, we will use direct SSH mechanism to verify the configurtions:</p>
+<ul>
+<li>
+<p>You can launch SSH to vEdge in Branch-1 by using <strong>MPutty</strong> client on the Remote Desktop: </p>
+<ul>
+<li><strong>SSH</strong> to OOB Management IP address of <strong>BR1-vEdge</strong>:  <code>198.18.134.105</code></li>
+<li>Use credentials of <code>admin</code> and <code>admin</code> for  authentication</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">If <code>admin/admin</code> credentials do not work then you may try using <code>cisco/cisco</code> or <code>cisco1/cisco1</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>On the SSH connection to vEdge, execute the below commands to:</p>
+<ul>
+<li>verify that VPN 10 has been successfully configured by vManage</li>
+<li>verify vEdge has connectivity to local device (on the LAN of vEdge) in VPN 10 by initiating a ping to a host on LAN :<pre><code>show run vpn 10
+ping vpn 10 10.3.0.10
+</code></pre>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">you can enter Control-C (Ctrl-C) to stop the ping</td>
+</tr>
+</tbody>
+</table>
+<p>Below screenshot shows the output of above command:</p>
+<p><img alt="VPN 10" src="pics/t5-br1-showrun-vpn10ge03-ping.png" /></p>
+</li>
+</ul>
+<p>This successfully adds VPN 10 to Branch 1</p>
+<h2 id="step-3-create-vpn-10-on-branch-2-br2">Step 3: Create VPN 10 on Branch 2 (BR2)</h2>
+<p>Now lets create VPN 10 on BR2 vEdge.  </p>
+<p>You will use the above procedure in <strong>Step 1</strong> &amp; <strong>Step 2</strong> to create &amp; verify VPN 10 on vEdge in Branch-2 (BR2-vEdge).  But in case of vEdge in Branch-2 you will need to <strong>adapt</strong> to below changes:</p>
+<ul>
+<li>
+<p>vEdge in Branch-2, with hostname BR2-vEdge, uses the <strong>CLI Template</strong> named: <code>CL-BR2-vEdge1</code>.  Hence you need to modify this template to add VPN 10 configurations</p>
+</li>
+<li>
+<p>VPN 10 will be configured on port <strong>ge0/2</strong> on vEdge in Branch-2.  Hence the below vpn 10 configuration will be added at the end of CLI template named <code>CL-BR2-vEdge1</code>:</p>
+<pre><code>vpn 10
+ name AppVPN
+ interface ge0/2
+  ip address {{vpn10-IP-address}}/24
+  no shutdown
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">Important Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Be very careful in making configuration changes on vEdge.  <strong>Do NOT change</strong> any <strong>configuration</strong> of VPN 512 as it can result in loss of connectivity to the vEdge - which can not be restored.   You will have to start the lab again from Task #1 if you loose network connectivity to a vEdge.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>vEdge in Branch-2 will be configured for IP address of <code>10.4.254.10</code> on the <strong>ge0/2</strong></p>
+</li>
+</ul>
+<p>Once the new template with VPN10 has been deployed then:</p>
+<ul>
+<li>
+<p>Using <strong>MPutty</strong>, initiate a <strong>SSH</strong> connection to <strong>BR2-vEdge</strong>, and execute the below commands to:</p>
+<ul>
+<li>verify that VPN 10 has been successfully configured by vManage</li>
+<li>verify vEdge has connectivity to local device (on the LAN of vEdge) in VPN 10 by initiating a ping to a host on LAN:<pre><code>show run vpn 10
+ping vpn 10 10.4.254.254
+</code></pre>
+</li>
+</ul>
+<p>This will successfully add VPN 10 to vEdge in Branch 2.  Below screenshot shows a successful test for BR2-vEdge:</p>
+<p><img alt="VPN 10" src="pics/t5-br2-showvpn10ge02-ping.png" /></p>
+</li>
+</ul>
+<h2 id="step-4-verify-vpn-10-routing-on-br1-br2">Step 4: Verify VPN 10 routing on BR1 &amp; BR2</h2>
+<p>Now we can verify the IP connectivity between vEdge in Branch-1 and Branch-2 on the VPN 10.</p>
+<ul>
+<li>
+<p>Using MTPutty, initiate SSH connections to <strong>BR1-vEdge</strong> and <strong>BR2-vEdge</strong></p>
+</li>
+<li>
+<p>Execute below commands on <strong>both</strong> <strong>BR1-vEdge</strong> and <strong>BR2-vEdge</strong></p>
+<pre><code>show ip route 
+show ip route vpn 10
+show omp routes
+show omp routes vpn 10
+</code></pre>
+<p>You should verify that each vEdge has learned the LAN segment IP address of remote vEdge (within VPN 10) </p>
+<p>Below screenshot shows an example of partial execution of above commands from BR2-vEdge:</p>
+<p><img alt="VPN 10" src="pics/t5-br2-showiproutes.png" /></p>
+<p>This confirms that VPN 10 is routed properly between BR1 and BR2</p>
+</li>
+</ul>
+<h2 id="step-5-create-vpn-10-on-data-center-dc">Step 5: Create VPN 10 on Data Center (DC)</h2>
+<p>Now lets configure this new VPN (number 1) on the vEdge in Data Center (DC). </p>
+<ul>
+<li>Log on to the vManage from a web browser (if not already open) and use credentials of <code>admin</code> and <code>admin</code>:</li>
+</ul>
+<pre><code>https://198.18.1.10
+</code></pre>
+<ul>
+<li>
+<p>Enter the <code>admin/admin</code> credentials for authentication</p>
+</li>
+<li>
+<p>On the vManage GUI, navigate to <strong>Configuration &gt; Templates</strong>   </p>
+</li>
+<li>
+<p>Then from <strong>Device</strong> tab, <strong>Select</strong> the CLI template named <strong>"CL-DC-vedge"</strong>.  Next, Click on the three dots <code>...</code> on right-side of <strong>"CL-DC-vedge"</strong> and  Select <strong>Edit</strong> from the drop downmenu  </p>
+</li>
+<li>
+<p>Next the configuration below at the end of the template. </p>
+</li>
+</ul>
+<pre><code>!
+vpn 10
+ interface ge0/0
+  ip address 198.18.133.211/18
+  no shutdown
+ !
+</code></pre>
+<ul>
+<li>
+<p>After adding above configuration to Template, Click on <strong>Update &gt; Next &gt; Complete</strong> </p>
+</li>
+<li>
+<p>Subsequently, <strong>confirm</strong> in the Tasks on vManage that the configurations are pushed to DC1-vEdge1</p>
+</li>
+</ul>
+<h2 id="step-6-validate-vpn-10-config-on-dc">Step 6: Validate VPN 10 config on DC</h2>
+<p>In this step we will confirm that DC1-vEdge has been provisioned for VPN #10 (as executed in the previous step).  There are multiple ways to access the configuration of vEdge, such as:</p>
+<ul>
+<li><strong>Direct SSH</strong> to Management IP address (VPN 512) of the vEdges</li>
+<li>Initiate <strong>SSH</strong> to vEdges from the <strong>vManage GUI</strong></li>
+<li>Access the Running configuration of vEdges within vManage GUI by clicking on <strong>Configuration &gt; Devices &gt; Click on three dots on the right</strong> (next to the name) of vEdge and click <strong>Running Configuration</strong> from the drop-down menu</li>
+</ul>
+<p>Below, we will use direct SSH mechanism to verify the configurtions:</p>
+<ul>
+<li>
+<p>You can launch SSH to vEdge in DC1 by using <strong>MPutty</strong> client on the Remote Desktop: </p>
+<ul>
+<li><strong>SSH</strong> to OOB Management IP address of <strong>DC1-VEDGE</strong>:  <code>198.18.134.100</code></li>
+<li>Use credentials of <code>admin</code> and <code>admin</code> for  authentication</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">If <code>admin/admin</code> credentials do not work then you may try using <code>cisco/cisco</code> or <code>cisco1/cisco1</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>On the SSH connection to vEdge, <strong>execute</strong> the below commands:</p>
+</li>
+</ul>
+<pre><code>show run vpn 10
+ping vpn 10 198.18.128.1 
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">you can enter Control-C (Ctrl-C) to stop the ping</td>
+</tr>
+</tbody>
+</table>
+<p>These commands <strong>verify</strong> that:</p>
+<ul>
+<li>VPN 10 has been successfully configured by vManage,</li>
+<li>vEdge has connectivity to local device (on the LAN of vEdge) in VPN 10 by initiating a ping to a host on LAN </li>
+</ul>
+<p>Below screenshot shows the output of above command:</p>
+<p><img alt="VPN 10" src="pics/t5-dc-showrun-vpn10-ping.png" /></p>
+<p>This successfully adds VPN 10 to DC</p>
+<h2 id="step-7-add-vpn-20-and-30-on-all-vedges-dc1-branch1-branch2">Step 7: Add VPN 20 and 30 on all vEdges (DC1, Branch1 &amp; Branch2)</h2>
+<ul>
+<li>Follow the same steps as mention above and apply following configs to the CLI Templates for respective vEdges and verify the routes:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>vEdge</strong></th>
+<th><strong>Configs</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DC1-vEdge</strong></td>
+<td><strong>vpn 20</strong><br/> interface loopback20<br/> ip address 10.20.100.1/32 <br/> no shutdown<br/>!<br/><strong>vpn 30</strong><br/> interface loopback30<br/> ip address 10.30.100.1/32 <br/> no shutdown</td>
+</tr>
+<tr>
+<td><strong>BR1-vEdge</strong></td>
+<td><strong>vpn 20</strong><br/> interface loopback20<br/> ip address 10.20.1.1/32 <br/> no shutdown<br/>!<br/><strong>vpn 30</strong><br/> interface loopback30<br/> ip address 10.30.1.1/32 <br/> no shutdown</td>
+</tr>
+<tr>
+<td><strong>BR2-vEdge</strong></td>
+<td><strong>vpn 20</strong><br/> interface loopback20<br/> ip address 10.20.2.1/32 <br/> no shutdown<br/>!<br/><strong>vpn 30</strong><br/> interface loopback30<br/> ip address 10.30.2.1/32 <br/> no shutdown</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">Important Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Be very careful in making configuration changes on vEdge.  <strong>Do NOT change</strong> any <strong>configuration</strong> of VPN 512 as it can result in loss of connectivity to the vEdge - which can not be restored.   You will have to start the lab again from Task #1 if you loose network connectivity to a vEdge.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>You have now completed this task of adding VPNs on the SD-WAN Fabric</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Task4-Full-Mesh/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Task 4 Full-Mesh Data Plane on internal networks
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Task6-OSPF_service/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Task 6 Establish OSPF on Service Side
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>
