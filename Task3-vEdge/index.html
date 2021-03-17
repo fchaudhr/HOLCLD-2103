@@ -288,29 +288,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-add-a-new-vedge-in-branch-2" class="md-nav__link">
-    Step 2: Add a new vEdge in Branch-2
+  <a href="#step-2-add-a-cli-template-for-vedge-in-br2" class="md-nav__link">
+    Step 2: Add a CLI Template for vEdge in BR2
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-add-a-cli-template-for-vedge-in-br2" class="md-nav__link">
-    Step 3: Add a CLI Template for vEdge in BR2
+  <a href="#step-3-add-cli-template-for-vedge-in-data-center-dc" class="md-nav__link">
+    Step 3: Add CLI Template for vEdge in Data Center (DC)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-add-cli-template-for-vedge-in-data-center-dc" class="md-nav__link">
-    Step 4: Add CLI Template for vEdge in Data Center (DC)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-verify-vedge-in-data-center-dc" class="md-nav__link">
-    Step 5: Verify vEdge in Data Center (DC)
+  <a href="#step-4-verify-vedge-in-data-center-dc" class="md-nav__link">
+    Step 4: Verify vEdge in Data Center (DC)
   </a>
   
 </li>
@@ -503,29 +496,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-add-a-new-vedge-in-branch-2" class="md-nav__link">
-    Step 2: Add a new vEdge in Branch-2
+  <a href="#step-2-add-a-cli-template-for-vedge-in-br2" class="md-nav__link">
+    Step 2: Add a CLI Template for vEdge in BR2
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-add-a-cli-template-for-vedge-in-br2" class="md-nav__link">
-    Step 3: Add a CLI Template for vEdge in BR2
+  <a href="#step-3-add-cli-template-for-vedge-in-data-center-dc" class="md-nav__link">
+    Step 3: Add CLI Template for vEdge in Data Center (DC)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-add-cli-template-for-vedge-in-data-center-dc" class="md-nav__link">
-    Step 4: Add CLI Template for vEdge in Data Center (DC)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-verify-vedge-in-data-center-dc" class="md-nav__link">
-    Step 5: Verify vEdge in Data Center (DC)
+  <a href="#step-4-verify-vedge-in-data-center-dc" class="md-nav__link">
+    Step 4: Verify vEdge in Data Center (DC)
   </a>
   
 </li>
@@ -687,183 +673,7 @@ show certificate installed
 </tr>
 </tbody>
 </table>
-<h2 id="step-2-add-a-new-vedge-in-branch-2">Step 2: Add a new vEdge in Branch-2</h2>
-<p>In this step, we will add a vEdge-Cloud in Branch-2 (BR2) to the SD-WAN Fabric.  The vEdge has already been configured for the Out-of-Band Management (i.e. VPN 512) so there is network connectivity to this vEdge</p>
-<table>
-<thead>
-<tr>
-<th align="left">Important Note:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Be very careful in making configuration changes on vEdge.  <strong>Do NOT change</strong> any <strong>configuration</strong> of VPN 512 as it can result in loss of connectivity to the vEdge - which can not be restored.   You will have to start the lab again from Task #1 if you loose network connectivity to a vEdge.</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Log on to the <strong>vManage</strong> GUI using a web browser (if not already open) and use credentials of <code>admin</code> and <code>admin</code> for authentication:</li>
-</ul>
-<pre><code>https://198.18.1.10
-</code></pre>
-<ul>
-<li>
-<p>On the <strong>vManage GUI</strong>, navigate to <strong>Configuration &gt;  Devices &gt; WAN Edge List</strong>.  Here you will see a WAN Edge device with <code>Chassis Number</code> of <code>ddd801b2-8cbe-4394-abd1-3b71e39886e3</code>.  This vEdge will be configured as a WAN Edge for Branch #2. </p>
-<p><img alt="WAN Edge List" src="../pics/t3-vmanage-vedge-br2.png" /></p>
-</li>
-<li>
-<p>Then <strong>Click</strong> the three dots <strong><code>...</code></strong> on the right side of this vEdge (with Chassis Number of ddd801b2-8cbe-4394-abd1-3b71e39886e3) and  <strong>Click</strong>  <code>Generate Bootstrap Configuration</code> as shown in the below screenshot:</p>
-<p><img alt="Generate Bootstrap" src="../pics/t3-br2-cert-otp.png" /></p>
-</li>
-<li>
-<p>Select <strong>Cloud-Init</strong> on <strong>Generate Bootstrap Configuration</strong> pop-up window:</p>
-<p><img alt="Generate Bootstrap" src="../pics/t3-br2-CloudInit.png" /></p>
-</li>
-<li>
-<p>This will result in generation of a new One-Time-Password (OTP) as shown in below screenshot.  <strong>Copy</strong>  the <code>otp</code> and <code>uuid</code> fields from this pop-up window.  </p>
-<p><img alt="OTP" src="../pics/t3-br2-cert-otp-data.png" /></p>
-<table>
-<thead>
-<tr>
-<th align="left">Note:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">A new OTP is generated everytime. Hence the OTP data on your pop-up window will not be the same as above screenshot</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p><strong>Click</strong> on the <code>Close</code> button of this pop-up window to proceed further</p>
-</li>
-<li>
-<p>Using <strong>MPutty</strong> on your Remote Desktop session, initiate a <strong>SSH</strong> session to the <strong>IP address</strong> of <strong>198.18.134.106</strong> this vEdge (<strong>BR2-vEdge</strong>).  You can use credentials of <code>admin</code> and <code>admin</code> for  authentication.</p>
-<table>
-<thead>
-<tr>
-<th align="left">Note:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">If <code>admin/admin</code> credentials do not work then you may try using <code>cisco/cisco</code> or <code>cisco1/cisco1</code></td>
-</tr>
-<tr>
-<td align="left">As mentioned earlier the OOB management (<code>vpn 512</code>) has been already configured on this vEdge.</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>On the <strong>SSH</strong> connection of vEdge: <strong>configure</strong> the below commands - you can copy and paste the below:</p>
-</li>
-</ul>
-<pre><code>conf t
-system
- host-name               BR2-vEdge
- gps-location latitude 32.79
- gps-location longitude -96.77
- system-ip               10.4.0.1
- site-id                 400
- organization-name       &quot;Cisco Sy1 - 19968&quot;
- vbond vbond.cisco.com
-vpn 0
-  host vbond.cisco.com ip 198.18.1.11 
- interface ge0/1
-  ip address 172.16.4.2/30
-  tunnel-interface
-   encapsulation ipsec
-   color mpls restrict
-   no allow-service bgp
-   allow-service dhcp
-   allow-service dns
-   allow-service icmp
-   no allow-service sshd
-   no allow-service netconf
-   no allow-service ntp
-   no allow-service ospf
-   no allow-service stun
-   allow-service https
-  !
-  no shutdown
- !
- ip route 0.0.0.0/0 172.16.4.1
- !
- commit
-</code></pre>
-<ul>
-<li>
-<p>Make sure the <strong>commit</strong> is done successfully on the vEdge.  vEdge is already configured so it is expected to see  "No modifications to commit" message </p>
-</li>
-<li>
-<p>On the <strong>SSH</strong> connection to vEdge: <strong>execute</strong> the below command:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Note:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">In below command you must <strong>replace</strong> the <code>{otp}</code> with the OTP that you copied in previous step of <code>Generate Bootstrap Configuration</code></td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-<pre><code>request vedge-cloud activate chassis-number ddd801b2-8cbe-4394-abd1-3b71e39886e3 token {otp}
-</code></pre>
-<p>Below screenshot gives an example of executing this command:</p>
-<p><img alt="OTP" src="../pics/t3-br2-requestcertcli.png" /></p>
-<ul>
-<li>On the <strong>SSH</strong> connection to vEdge, <strong>execute</strong> the below command to verify that a valid serial number is generated </li>
-</ul>
-<pre><code>show certificate serial
-</code></pre>
-<p>Below screenshot shows the output of above command confirming that a valid serial is now installed on vEdge:</p>
-<p><img alt="show cert" src="../pics/t3-br2-show-cert.png" /></p>
-<table>
-<thead>
-<tr>
-<th align="left">Note:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">If the output of above command does not show any serial number, or it gives a message such as '<em>Certificate not yet installed ... giving up</em>' then you can re-enter the above <code>request vedge-cloud activate chassis-number ddd801b2-8cbe-4394-abd1-3b71e39886e3 token {otp}</code> command</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>On the <strong>SSH</strong> connection to vEdge: <strong>execute</strong> the below commands to verify control plane connectivity of this vEdge to the controllers (vManage, vSmart)</li>
-</ul>
-<pre><code>show control connections
-</code></pre>
-<p>Below screenshot shows the output of above command:</p>
-<p><img alt="show control" src="../pics/t3-br2-show-control-connections.png" /></p>
-<p>From the above output you can:</p>
-<ul>
-<li>confirm that <strong>State</strong> of control plane connection to vManage is <strong>up</strong></li>
-<li>confirm that <strong>State</strong> of control plane connections to vSmart are <strong>up</strong></li>
-<li>
-<p>confirm that valid Private, Public, System IP addresses, Protcols etc of vSmart, vManage and vEdge are shown</p>
-<table>
-<thead>
-<tr>
-<th align="left">Note:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">If the <strong>State</strong> of any control connection is <strong>down</strong>, then you can try to issue <code>clear control connections</code> command.  And check the status again.  If still there are issues then kindly check with Lab instructor</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-<h2 id="step-3-add-a-cli-template-for-vedge-in-br2">Step 3: Add a CLI Template for vEdge in BR2</h2>
+<h2 id="step-2-add-a-cli-template-for-vedge-in-br2">Step 2: Add a CLI Template for vEdge in BR2</h2>
 <p>Next a CLI Template will be added so future configurations of vEdge in Branch number 2 will be done via vManage directly.   These configurations will be done by using "CLI Template" from the vManage.  Use of "Feature Templates" on vManage is an alternate mechanism for centralization configurations from vManage, but it will not be used in this lab. </p>
 <table>
 <thead>
@@ -1085,7 +895,7 @@ show ip route
 show control connections
 show run
 </code></pre>
-<h2 id="step-4-add-cli-template-for-vedge-in-data-center-dc">Step 4: Add CLI Template for vEdge in Data Center (DC)</h2>
+<h2 id="step-3-add-cli-template-for-vedge-in-data-center-dc">Step 3: Add CLI Template for vEdge in Data Center (DC)</h2>
 <p>Next a CLI Template will be added so configurations of vEdge in Data Center (DC) will be done via vManage directly.   These configurations will be done by using "CLI Template" from the vManage.  Use of "Feature Templates" on vManage is an alternate mechanism for centralization configurations from vManage, but it will not be used in this lab. </p>
 <table>
 <thead>
@@ -1339,7 +1149,7 @@ vpn 512
 </table>
 </li>
 </ul>
-<h2 id="step-5-verify-vedge-in-data-center-dc">Step 5: Verify vEdge in Data Center (DC)</h2>
+<h2 id="step-4-verify-vedge-in-data-center-dc">Step 4: Verify vEdge in Data Center (DC)</h2>
 <p>DC1-vEdge may not be successfully registered to control plane device due to incorrect Public IP address.  Hence in execution of last bullet in the previous step the "Device is offline" message may be shown by vManage.  You can go through below steps to bring it online and/or to verify that it is registered to controllers:</p>
 <ul>
 <li>

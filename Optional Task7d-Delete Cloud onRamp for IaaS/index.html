@@ -18,7 +18,7 @@
     
     
       
-        <title>Topology - Cisco Live 2021 HOLCLD-2103</title>
+        <title>Optional Task 7d - Deleting Cloud onRamp for IaaS and Verification - Cisco Live 2021 HOLCLD-2103</title>
       
     
     
@@ -57,7 +57,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-topology" class="md-skip">
+        <a href="#optional-task-7d-deleting-cloud-onramp-for-iaas-and-verification" class="md-skip">
           Skip to content
         </a>
       
@@ -87,7 +87,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Topology
+              Optional Task 7d - Deleting Cloud onRamp for IaaS and Verification
             
           </span>
         </div>
@@ -207,20 +207,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Topology/" class="md-nav__link">
         Topology
       </a>
-      
     </li>
   
 
@@ -438,6 +429,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-deleting-cloud-onramp-for-iaas-and-verification" class="md-nav__link">
+    Step 1: Deleting Cloud onRamp for IaaS and Verification
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -448,47 +454,111 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fchaudhr/HOLCLD-2103/edit/master/docs/Topology.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/fchaudhr/HOLCLD-2103/edit/master/docs/Optional Task7d-Delete Cloud onRamp for IaaS.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="lab-topology">Lab Topology</h1>
-<p><img alt="" src="../pics/Topology.png" /></p>
-<h1 id="ip-addressing">IP Addressing</h1>
+                <h1 id="optional-task-7d-deleting-cloud-onramp-for-iaas-and-verification">Optional Task 7d - Deleting Cloud onRamp for IaaS and Verification</h1>
+<p>As per previous tasks, <strong>Cloud OnRamp for IaaS</strong> created public cloud resources in AWS such as transit VPC; two (2) vEdge Cloud devices, <strong>vEdge1</strong> and <strong>vEdge2</strong>; virtual private gateway, vpn connections between host and transit VPCs etc. This Task will delete these resources</p>
+<p><strong>Pre-requisite 1:</strong>  SDWAN controllers must be fully operational.  If those are not installed (or operational) then please complete the previous Tasks first.</p>
+<p><strong>Pre-requisite 2:</strong>  Pre-configured <strong>Cloud OnRamp for IaaS</strong> must be fully operational.  If it is not operational then please complete the previous Tasks first.</p>
+<p>You configure and manage <strong>Cloud OnRamp for IaaS</strong> through the vManage. A configuration wizard in the vManage automates the bring-up the transit to your public cloud account and automates the connections between public-cloud and branches in SDWAN overlay network. We will use same configuration wizard to delete it.</p>
+<h2 id="step-1-deleting-cloud-onramp-for-iaas-and-verification">Step 1: Deleting Cloud onRamp for IaaS and Verification</h2>
+<p>In this step you will unmap host transit VPC and then elete public cloud resources in AWS. </p>
+<ul>
+<li>Log on the vManage from a web browser (if not already open) and use credentials of <code>admin</code> and <code>admin</code>:</li>
+</ul>
+<pre><code>https://198.18.1.10
+</code></pre>
 <table>
 <thead>
 <tr>
-<th><strong>Hostname</strong></th>
-<th><strong>IP Address</strong></th>
-<th><strong>Credentials</strong></th>
+<th align="left">Note:</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Windows Jump Station</td>
-<td>198.18.133.36</td>
-<td>administrator/C1sco12345</td>
-</tr>
-<tr>
-<td>vManage</td>
-<td>198.18.1.10</td>
-<td>admin/admin</td>
-</tr>
-<tr>
-<td>vSmart</td>
-<td>198.18.1.12</td>
-<td>admin/admin</td>
-</tr>
-<tr>
-<td>vBond</td>
-<td>198.18.1.11</td>
-<td>admin/admin</td>
+<td align="left">If <code>admin/admin</code> credentials do not work then you may try using <code>cisco/cisco</code> or <code>cisco1/cisco1</code></td>
 </tr>
 </tbody>
 </table>
-<p>Pod specific Public IP addresses, AWS management console link and credentials can be found in <code>HOLCLD-2103 - Lab Pod Sheets - CL-Digital 2021.xls</code> file within following box folder:
-<a href="https://cisco.box.com/s/323cnv2n5x25f7quace3drch0hvbtwb0">https://cisco.box.com/s/323cnv2n5x25f7quace3drch0hvbtwb0</a></p>
+<ul>
+<li>On the vManage GUI, navigate to <strong>Configuration &gt; Cloud onRamp for IaaS</strong> and click green up arrow under <strong>Mapped Host VPCs (Total: 1)</strong>. This will unmap host VPC.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp.png" /></p>
+<ul>
+<li>Then checkmark host VPC <strong>SDWAN-hostVPC#</strong> <code>#=1,2,3,...,16</code> and click <strong>Un-Map VPCs</strong>.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp2.png" /></p>
+<ul>
+<li>Click <strong>OK</strong>.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp3.png" /></p>
+<ul>
+<li>Confirm unmapping host VPC successfully completed.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp4.png" /></p>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Unmapping host VPC deletes all VPN connections to the VPN gateway in the host VPC, and then deletes the VPN gateway. When you make additional VPN connections to a mapped host VPC, they will be terminated as part of the unmapping process.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Navigate back to <strong>Configuration &gt; Cloud onRamp for IaaS</strong> and click green up arrow under <strong>Transit VPCs (Total:1)</strong>. This will delete transit VPC.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp5.png" /></p>
+<ul>
+<li>Click <strong>Transit VPCs</strong></li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp6.png" /></p>
+<ul>
+<li>Click the <strong>Trash icon</strong> to the left of the row in order to delete the transit VPC.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp7.png" /></p>
+<ul>
+<li>Click <strong>OK</strong></li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp8.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp9.png" /></p>
+<ul>
+<li>Status can be followed through vManage and AWS Management Console. In order to confirm the changes on AWS Management Console; log on to AWS from a web browser (if not already open) and click on <strong>Sign In to the Console</strong> </li>
+</ul>
+<pre><code>https://aws.amazon.com/console
+</code></pre>
+<p>Use credentials of the following:</p>
+<ul>
+<li>Account ID = <code>807272386705</code></li>
+<li>IAM user name = <code>CLEUR_User#</code> <code>#=1,2,3,...,16</code></li>
+<li>Password = <code>CLEUR19</code></li>
+</ul>
+<p><img alt="AWS Region" src="../pics/t10-AWS_login.png" /></p>
+<p>Once connected to AWS Management Console, verify assigned region is selected on the navigation bar for your given number.</p>
+<p>Select region list from up-right corner of the console as shown below and select your respective region. As an example, CLEUR_User1 is to select US East (Ohio) region.</p>
+<p><img alt="AWS Region" src="../pics/t10-AWS_region_verfication.png" /></p>
+<p>Then click on <code>Services</code> on the navigation pane and select <strong>EC2</strong> from <strong>Compute</strong> menu. </p>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_CloudonRamp_CreateAWS5.png" /></p>
+<p>Select <strong>Instances</strong></p>
+<p>You will see vEdge Cloud instances has started to be terminated.</p>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp10.png" /></p>
+<p>On vManage, confirm that transit VPC, vEdges, interfaces, subnets and internet gateway have been successfully deleted.</p>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp11.png" /></p>
+<p>In order to confirm vEdges has been terminated successfully, go back to AWS Management Console and click <strong>Refresh</strong> the page.</p>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp12.png" /></p>
+<p>Then, confirm transit VPC has been deleted by clicking on <code>Services</code> on the navigation pane and selecting <strong>VPC</strong> from <strong>Network &amp; Content Delivery</strong> menu.</p>
+<p><img alt="AWS hostVPC" src="../pics/t10-AWS_select_VPC.png" /></p>
+<p>Click on <strong>Your VPCs</strong> on the VPC navigation pane</p>
+<p>Confirm <code>SDWAN-transitVPC#</code> has been successfully deleted.</p>
+<p><img alt="AWS CloudonRamp" src="../pics/t10-AWS_DeleteCloudonRamp13.png" /></p>
+<hr />
+<p>This concludes the process to delete <strong>Cloud onRamp for Iaas</strong> and execute verification.</p>
                 
               
               
@@ -503,39 +573,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Home
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../Task1-Connect/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Task 1 Remote Connection
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
