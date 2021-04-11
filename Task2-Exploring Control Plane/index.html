@@ -277,22 +277,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-changing-vbond-ip-address-on-vmanage" class="md-nav__link">
-    Step 2: Changing vBond IP Address on vManage
+  <a href="#step-2-prerequisite-task-change-wan-edge-certificate-authorization-method" class="md-nav__link">
+    Step 2: Prerequisite Task - Change WAN Edge Certificate Authorization Method
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-changing-vbond-ip-address-on-vsmart-and-exploring-vsmart" class="md-nav__link">
-    Step 3: Changing vBond IP Address on vSmart and Exploring vSmart
+  <a href="#step-3-changing-vbond-ip-address-on-vmanage" class="md-nav__link">
+    Step 3: Changing vBond IP Address on vManage
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-exploring-vbond" class="md-nav__link">
-    Step 4: Exploring vBond
+  <a href="#step-4-changing-vbond-ip-address-on-vsmart-and-exploring-vsmart" class="md-nav__link">
+    Step 4: Changing vBond IP Address on vSmart and Exploring vSmart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-exploring-vbond" class="md-nav__link">
+    Step 5: Exploring vBond
   </a>
   
 </li>
@@ -502,22 +509,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-changing-vbond-ip-address-on-vmanage" class="md-nav__link">
-    Step 2: Changing vBond IP Address on vManage
+  <a href="#step-2-prerequisite-task-change-wan-edge-certificate-authorization-method" class="md-nav__link">
+    Step 2: Prerequisite Task - Change WAN Edge Certificate Authorization Method
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-changing-vbond-ip-address-on-vsmart-and-exploring-vsmart" class="md-nav__link">
-    Step 3: Changing vBond IP Address on vSmart and Exploring vSmart
+  <a href="#step-3-changing-vbond-ip-address-on-vmanage" class="md-nav__link">
+    Step 3: Changing vBond IP Address on vManage
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-exploring-vbond" class="md-nav__link">
-    Step 4: Exploring vBond
+  <a href="#step-4-changing-vbond-ip-address-on-vsmart-and-exploring-vsmart" class="md-nav__link">
+    Step 4: Changing vBond IP Address on vSmart and Exploring vSmart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-exploring-vbond" class="md-nav__link">
+    Step 5: Exploring vBond
   </a>
   
 </li>
@@ -645,7 +659,20 @@
 </li>
 </ul>
 <p><img alt="vManage" src="../pics/t2-vManage_vAnalytics.png" /></p>
-<h2 id="step-2-changing-vbond-ip-address-on-vmanage">Step 2: Changing vBond IP Address on vManage</h2>
+<h2 id="step-2-prerequisite-task-change-wan-edge-certificate-authorization-method">Step 2: Prerequisite Task - Change WAN Edge Certificate Authorization Method</h2>
+<ul>
+<li>Go to Administration &gt; Settings</li>
+</ul>
+<p><img alt="vManage" src="../pics/t2-vManage_Administration.png" /></p>
+<ul>
+<li>Go to <strong>WAN Edge Cloud Certificate Authorization</strong> and click <strong>Edit</strong></li>
+</ul>
+<p><img alt="vManage" src="../pics/t2-vManage_Cert-Auth-1.png" /></p>
+<ul>
+<li>Select <strong>Automated (vManage - Signed recomended)</strong> and <strong>Save</strong></li>
+</ul>
+<p><img alt="vManage" src="../pics/t2-vManage_Cert-Auth-2.png" /></p>
+<h2 id="step-3-changing-vbond-ip-address-on-vmanage">Step 3: Changing vBond IP Address on vManage</h2>
 <p>In this step, you will change vBond IP Address on vManage. </p>
 <ul>
 <li>
@@ -712,7 +739,7 @@ commit and-quit
 </table>
 <p>Navigate to Dashboard and check the vBond orchestrators' status is updated with a green up arrow (indicating reachable).</p>
 <p><img alt="vManage" src="../pics/t2-vManage_vBondIP3.png" /></p>
-<h2 id="step-3-changing-vbond-ip-address-on-vsmart-and-exploring-vsmart">Step 3: Changing vBond IP Address on vSmart and Exploring vSmart</h2>
+<h2 id="step-4-changing-vbond-ip-address-on-vsmart-and-exploring-vsmart">Step 4: Changing vBond IP Address on vSmart and Exploring vSmart</h2>
 <p>In this step we will update vSmart template on vManage, and change vBond IP address on VSmart. Then we will verify control connections on vSmart, and status of vSmart on vManage Dashboard.</p>
 <ul>
 <li>Log on the vManage from a web browser (if not already open) and use credentials of <code>admin</code> and <code>admin</code>:<pre><code>https://198.18.1.10
@@ -935,7 +962,7 @@ show certificate installed
 </tr>
 </tbody>
 </table>
-<h2 id="step-4-exploring-vbond">Step 4: Exploring vBond</h2>
+<h2 id="step-5-exploring-vbond">Step 5: Exploring vBond</h2>
 <ul>
 <li>
 <p>Launch <strong>Mputty</strong> application from the Remote desktop by clicking on it's icon on the desktop to initiate a <strong>SSH</strong> session to the <strong>vBond</strong>.  You can use credentials of <code>admin</code> and <code>admin</code> for  authentication.</p>
