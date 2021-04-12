@@ -627,7 +627,7 @@ vpn 512
  !
  vpn 10
   interface loopback0
-   ip address 1.1.1.1/32
+   ip address {{vpn10-IP-address}}/32
    no shutdown
  !
 !
@@ -691,7 +691,7 @@ vpn 30
 <p><img alt="AWS AttachDevices" src="../pics/t7-AWS_AttachDevices.png" /></p>
 <ul>
 <li>On the <strong>Attach Devices</strong> window: <ul>
-<li>Under the <strong>Available Devices</strong> tab, <strong>Click</strong> on two (2) available uuid. Select <code>uuid:9e785ad7-558a-40c6-b0c0-fcc96e6d04ca</code> and <code>uuid:52c7911f-c5b0-45df-b826-3155809a2a1a</code></li>
+<li>Under the <strong>Available Devices</strong> tab, <strong>Click</strong> on two (2) available uuid. Select available uuids such as; <code>uuid:9e785ad7-558a-40c6-b0c0-fcc96e6d04ca</code>, <code>uuid:52c7911f-c5b0-45df-b826-3155809a2a1a</code> or <code>uuid:b3265c5c-3db6-4d25-9d3b-1f416b89adb0</code>.</li>
 <li><strong>Click</strong> on the <code>Right Arrow icon</code> as shown in below screenshot.   At this point the vEdges should be moved to the <strong>Selected Devices</strong> tab.</li>
 <li><strong>Click</strong> on the <code>Attach</code> button as shown in below screenshot.</li>
 </ul>
@@ -700,7 +700,7 @@ vpn 30
 <p><img alt="AWS AttachDevices" src="../pics/t7-AWS_AttachDevices2.png" /></p>
 <ul>
 <li>
-<p>On the next screen, <strong>Select</strong> the first vEdge. You can select <code>uuid:9e785ad7-558a-40c6-b0c0-fcc96e6d04ca</code> as <code>vEdge1</code> and <code>uuid:52c7911f-c5b0-45df-b826-3155809a2a1a</code> as <code>vEdge2</code>.</p>
+<p>On the next screen, <strong>Select</strong> the first vEdge.</p>
 </li>
 <li>
 <p><strong>Click</strong> the three dots <strong><code>...</code></strong> on the right side of this vEdge and  <strong>Select</strong>  <code>Edit Device Template</code> option from the drop down menu as shown in the below screenshot:</p>
@@ -713,6 +713,7 @@ vpn 30
 <li>Enter <strong>systemip</strong> of <code>66.66.66.1</code></li>
 <li>Enter <strong>siteid</strong> of <code>66</code></li>
 <li>Enter provided  <strong>vbond-public-ip</strong></li>
+<li>Enter <strong>vpn10-IP-address</strong> of <code>10.10.66.1</code></li>
 <li>Enter <strong>vpn20-IP-address</strong> of <code>10.20.66.1</code></li>
 <li>Enter <strong>vpn30-IP-address</strong> of <code>10.30.66.1</code></li>
 <li>Click on the <code>Update</code> button</li>
@@ -731,6 +732,7 @@ vpn 30
 <li>Enter <strong>systemip</strong> of <code>66.66.66.2</code></li>
 <li>Enter <strong>siteid</strong> of <code>66</code></li>
 <li>Enter provided  <strong>vbond-public-ip</strong></li>
+<li>Enter <strong>vpn10-IP-address</strong> of <code>10.10.66.2</code></li>
 <li>Enter <strong>vpn20-IP-address</strong> of <code>10.20.66.2</code></li>
 <li>Enter <strong>vpn30-IP-address</strong> of <code>10.30.66.2</code></li>
 <li>Click on the <code>Update</code> button</li>
